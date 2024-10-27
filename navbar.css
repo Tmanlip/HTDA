@@ -21,6 +21,20 @@
 body{
     height: 100vh;
     background-color: var(--body-color);
+    display:flex;
+    margin: 0;
+}
+
+main{
+    width: 100%;
+    min-height: 120vh;
+    font-family: "Open Sans", sans-serif;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    padding-bottom: 300px;
+    flex: 1;
+    flex-direction: column;
 }
 
 body.dark{
@@ -235,6 +249,7 @@ footer{
     width: 100%;
     bottom: 0;
     left: 0;
+    margin-top: auto;
 }
 
 footer::before{
