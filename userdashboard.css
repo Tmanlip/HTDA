@@ -244,12 +244,12 @@ main{
     flex-direction: column;
 }
 
-main .box{
+main .first-box{
     width: 200px;
     height: 100px;
     border: 1px solid white;
     margin: auto;
-    justify-content: left;
+    transform: translate(-650px, -100px);
 }
 
 footer{
