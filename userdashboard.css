@@ -20,7 +20,7 @@
 }
 
 body{
-    height: 120vh;
+    height: 200vh;
     background-color: var(--body-color);
     display: flex;
     margin: 0;
@@ -234,7 +234,7 @@ nav .nav-bar .logo a{
 
 main{
     width: 100%;
-    min-height: 120vh;
+    min-height: 100vh;
     font-family: "Open Sans", sans-serif;
     align-items: center;
     justify-content: center;
@@ -332,37 +332,59 @@ main .first-box {
     text-align: center; /* Center text under icon */
 }
 
-.second-box{
+main .second-big-box{
+    height: 1000px;
+    width: 1000px;
+    transform: translateY(-420px);
+    /*border: 1px solid white; */
     margin-left: 400px;
+    display: flex;           /* Use flexbox for layout */
+    flex-direction: column;  /* Stack items vertically */
+}
+
+.second-big-box .small-first-box{
     width: 1000px;
     height: 100px;
     border: 1px solid var(--search-bar);
-    transform: translateY(-420px);
     border-radius: 10px;
     box-shadow: 1px 1px var(--text-color);
-    display: flex; /* Makes it a flex container */
+    display: flex; /* Makes it a flex container */ 
     justify-content: center; /* Centers content horizontally */
     align-items: center; /* Centers content vertically */
     text-align: center; /* Centers text */
 }
 
-.second-box .first-items{
-    font-size: 30px;
-    color: var(--text-color);
+.hidden{
     display: none;
 }
 
-.second-box .second-items{
-    font-size: 30px;
-    color: var(--text-color);
+.displayed{
+ display: block;
 }
 
-.third-box{
-    height: 100px;
+.small-first-box .first-items{
+    font-size: 30px;
+    color: var(--text-color);
+    transition: all 0.3s ease;
+}
+
+.small-first-box .second-items{
+    font-size: 30px;
+    color: var(--text-color);
+    transition: all 0.3s ease;
+} 
+
+.small-first-box .third-items{
+    font-size: 30px;
+    color: var(--text-color);
+    transition: all 0.3s ease;
+} 
+
+.second-big-box .big-first-box{
     width: 1000px;
-    border: 1px solid var(--search-bar);
-    box-shadow: 1px 1px var(--text-color);
-    margin-left: 400px;
+    height: 700px;
+    border: 1px solid var(--search-bar);  
+    transform: translateY(50px);
 }
 
 footer{
@@ -568,7 +590,7 @@ footer .bottom-details .bottom_text{
         margin-bottom: 100px; /* Reduces space between title and icon boxes */
     }
 
-    .second-box {
+    main .second-big-box {
         width: 90%; /* Adjusts width to be more responsive */
         margin-left: auto; /* Centers the box */
         margin-right: auto; /* Centers the box */
@@ -655,7 +677,7 @@ footer .bottom-details .bottom_text{
         font-size: 12px; /* Adjusts font size */
     }
 
-    .second-box {
+    main .second-big-box {
         height: auto; /* Allows box to resize based on content */
     }
 
@@ -692,7 +714,7 @@ footer .bottom-details .bottom_text{
         transform: translate(0, 100px); /* Centers the box */
     }
 
-    .second-box {
+    main .second-big-box {
         width: 100%; /* Full width on very small screens */
         height: auto; /* Allows box to resize based on content */
     }
