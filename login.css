@@ -27,6 +27,16 @@ body{
     flex-direction: column;
 }
 
+.header-image {
+    width: 100%; /* Makes it responsive to the width of its container */
+    max-width: 300px; /* Sets a max width */
+    height: auto; /* Maintains the aspect ratio */
+    padding-top: 10px;
+    display: block;
+    margin: 0 auto; /* Centers the image if it’s smaller than 887px */
+    border-radius: 8px; /* Optional: Rounds corners */
+}
+
 main{
     width: 100%;
     min-height: 120vh;
@@ -34,7 +44,7 @@ main{
     align-items: center;
     justify-content: center;
     display: flex;
-    padding-bottom: 300px;
+    padding-bottom: 400px;
     flex: 1;
     flex-direction: column;
 }
@@ -42,7 +52,7 @@ main{
 main::before{
     content: '';
     position: absolute;
-    height: 160%;
+    height: 170%;
     width: 100%;
     background: url(redmountain.jpg);
     background-position: center;

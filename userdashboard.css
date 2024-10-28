@@ -245,11 +245,18 @@ main{
 }
 
 main .first-box{
-    width: 200px;
-    height: 100px;
+    width: 400px;
+    height: 550px;
     border: 1px solid white;
+    background-color: rgba(0, 0, 0, 0.1);
     margin: auto;
-    transform: translate(-650px, -100px);
+    transform: translate(-550px, 80px);
+}
+
+.first-box p{
+    font-size: 30px;
+    font-weight: 200;
+    text-align: center;
 }
 
 footer{
