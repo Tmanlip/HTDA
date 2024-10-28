@@ -244,19 +244,117 @@ main{
     flex-direction: column;
 }
 
-main .first-box{
+main .first-box {
     width: 400px;
-    height: 550px;
-    border: 1px solid white;
-    background-color: rgba(0, 0, 0, 0.1);
-    margin: auto;
-    transform: translate(-550px, 80px);
+    height: 500px;
+    border: 2px solid var(--search-bar);
+    transform: translate(-550px, 150px);
+    box-shadow: 1px 1px var(--text-color);
+    border-radius: 10px;
+    display: flex; /* Makes it a flex container */
+    flex-direction: column; /* Aligns children vertically */
+    padding: 20px; /* Adds some padding inside the box */
+    color: var(--text-color)
 }
 
-.first-box p{
+.first-box p {
     font-size: 30px;
     font-weight: 200;
     text-align: center;
+    margin-bottom: 200px; /* Space between title and icon boxes */
+}
+
+.first-box .icon-box{
+    width: 400px;
+    height: 300px;  
+    translate: -20px;
+    display: flex;
+    justify-content: center;
+}
+
+.first-box .icon-box .home,
+.first-box .icon-box .home-2,
+.first-box .icon-box .home-3{
+    width: 100px;
+    height: 100px;
+    border: 1px solid white;
+    display: flex;
+    justify-content: center; /* Centers icon horizontally */
+    align-items: center; /* Centers icon vertically */
+    flex-direction: column; /* Stacks icon and text vertically */
+    border-radius: 5px;
+    margin: 10px; /* Reduced margin for better layout */
+    cursor: pointer;
+}
+
+.icon-box .home:hover{
+    content: '';
+    background: var(--search-bar);
+}
+
+.icon-box .home-2:hover{
+    content: '';
+    background: var(--search-bar);
+}
+
+.home-3:hover{
+    content: '';
+    background: var(--search-bar);
+}
+
+.home .prof {
+    font-size: 30px; /* Adjust size as needed */
+}
+
+.home .prof-text {
+    margin-top: 8px; /* Space between icon and text */
+    font-size: 15px; /* Adjust size as needed */
+    text-align: center; /* Center text under icon */
+}
+
+.home-2 .usr {
+    font-size: 25px; /* Adjust size as needed */
+}
+
+.home-2 .usr-text {
+    margin-top: 8px; /* Space between icon and text */
+    font-size: 15px; /* Adjust size as needed */
+    text-align: center; /* Center text under icon */
+}
+
+.home-3 .grad {
+    font-size: 25px; /* Adjust size as needed */
+}
+
+.home-3 .grad-text {
+    margin-top: 8px; /* Space between icon and text */
+    font-size: 13px; /* Adjust size as needed */
+    text-align: center; /* Center text under icon */
+}
+
+.second-box{
+    margin-left: 400px;
+    width: 1000px;
+    height: 100px;
+    border: 1px solid var(--search-bar);
+    transform: translateY(-420px);
+    border-radius: 10px;
+    box-shadow: 1px 1px var(--text-color);
+    display: flex; /* Makes it a flex container */
+    justify-content: center; /* Centers content horizontally */
+    align-items: center; /* Centers content vertically */
+    text-align: center; /* Centers text */
+}
+
+.second-box .first-items{
+    font-size: 30px;
+    color: var(--text-color);
+    display: none;
+}
+
+.second-box .second-items{
+    font-size: 30px;
+    color: var(--text-color);
 }
 
 footer{
@@ -451,6 +549,22 @@ footer .bottom-details .bottom_text{
     footer .content .link-boxes{
         flex-wrap: wrap;
     }
+
+    main .first-box {
+        width: 90%; /* Adjusts width to be more responsive */
+        transform: translate(0, 150px); /* Centers the box */
+    }
+
+    .first-box p {
+        font-size: 24px; /* Smaller font size for better readability */
+        margin-bottom: 100px; /* Reduces space between title and icon boxes */
+    }
+
+    .second-box {
+        width: 90%; /* Adjusts width to be more responsive */
+        margin-left: auto; /* Centers the box */
+        margin-right: auto; /* Centers the box */
+    }
 }
 
 @media (max-width: 790px){
@@ -503,6 +617,40 @@ footer .bottom-details .bottom_text{
         margin-top: 20px;
     }
 
+    main .first-box {
+        height: auto; /* Allows box to resize based on content */
+        justify-content: center;
+    }
+
+    .first-box .icon-box {
+        display: flex; /* Ensures icon boxes are displayed as flex items */
+        align-items: center; /* Centers items vertically within the icon box */
+        justify-content: center;
+        flex-direction: row; /* Changes direction to row to display side by side */
+        flex-wrap: wrap; /* Allows wrapping if space is insufficient */
+        margin-left: 30px;
+        gap: 10px; /* Optional: adds space between icon boxes */
+    }
+
+    .first-box .icon-box .home,
+    .first-box .icon-box .home-2,
+    .first-box .icon-box .home-3 {
+        width: 80px; /* Reduces icon box size */
+        height: 80px; /* Reduces icon box size */
+    }
+
+    .home .prof, .home-2 .usr, .home-3 .grad {
+        font-size: 20px; /* Adjusts font size */
+    }
+
+    .home .prof-text, .home-2 .usr-text, .home-3 .grad-text {
+        font-size: 12px; /* Adjusts font size */
+    }
+
+    .second-box {
+        height: auto; /* Allows box to resize based on content */
+    }
+
     .content .top .logo-details{
         font-size: 26px;
     }
@@ -529,6 +677,51 @@ footer .bottom-details .bottom_text{
 }
 
 @media (max-width: 520px){
+    main .first-box {
+        width: 100%; /* Full width on very small screens */
+        height: auto; /* Allows box to resize based on content */
+        margin: 0; /* Removes margin for better fitting */
+        transform: translate(0, 100px); /* Centers the box */
+    }
+
+    .second-box {
+        width: 100%; /* Full width on very small screens */
+        height: auto; /* Allows box to resize based on content */
+    }
+
+    .first-box p {
+        font-size: 20px; /* Further reduces font size */
+        margin-bottom: 50px; /* Reduces space between title and icon boxes */
+    }
+
+    .first-box .icon-box{
+        display: flex; /* Ensures icon boxes are displayed as flex items */
+        align-items: center; /* Centers items vertically within the icon box */
+        flex-direction: row; /* Changes direction to row to display side by side */
+        flex-wrap: wrap; /* Allows wrapping if space is insufficient */
+        gap: 10px; /* Optional: adds space between icon boxes */
+    }
+
+    .first-box .icon-box .home,
+    .first-box .icon-box .home-2,
+    .first-box .icon-box .home-3 {
+        width: 70px; /* Further reduces icon box size */
+        height: 70px; /* Further reduces icon box size */
+    }
+
+    .home .prof, .home-2 .usr, .home-3 .grad {
+        font-size: 18px; /* Adjusts font size */
+    }
+
+    .home .prof-text, .home-2 .usr-text, .home-3 .grad-text {
+        font-size: 10px; /* Adjusts font size */
+    }
+
+    .second-box {
+        width: 100%; /* Full width on very small screens */
+        height: auto; /* Allows box to resize based on content */
+    }
+
     footer .content .top{
         flex-direction: column;
     }
