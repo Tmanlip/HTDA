@@ -20,7 +20,7 @@
 }
 
 body{
-    height: 110vh;
+    height: 120vh;
     background-color: var(--body-color);
     display: flex;
     margin: 0;
@@ -355,6 +355,14 @@ main .first-box {
 .second-box .second-items{
     font-size: 30px;
     color: var(--text-color);
+}
+
+.third-box{
+    height: 100px;
+    width: 1000px;
+    border: 1px solid var(--search-bar);
+    box-shadow: 1px 1px var(--text-color);
+    margin-left: 400px;
 }
 
 footer{
