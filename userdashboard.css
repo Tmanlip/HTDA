@@ -259,7 +259,6 @@ main .first-box {
 
 .first-box p {
     font-size: 30px;
-    font-weight: 200;
     text-align: center;
     margin-bottom: 200px; /* Space between title and icon boxes */
 }
@@ -322,11 +321,11 @@ main .first-box {
     text-align: center; /* Center text under icon */
 }
 
-.home-3 .grad {
+.home-3 .history {
     font-size: 25px; /* Adjust size as needed */
 }
 
-.home-3 .grad-text {
+.home-3 .history-text {
     margin-top: 8px; /* Space between icon and text */
     font-size: 13px; /* Adjust size as needed */
     text-align: center; /* Center text under icon */
@@ -383,9 +382,66 @@ main .second-big-box{
 .second-big-box .big-first-box{
     width: 1000px;
     height: 700px;
-    border: 1px solid var(--search-bar);  
-    transform: translateY(50px);
+    transform: translateY(50px); 
+    display: flex;
 }
+
+.big-first-box .one-box-dash{
+    width: 550px;
+    height: 700px;
+    border: 1px solid var(--search-bar); 
+    box-shadow: 1px 1px var(--text-color);
+    border-radius: 10px;
+} 
+
+.big-first-box .two-box-dash{
+    width: 400px;               /* Adjust width to fit within .big-first-box */
+    height: 700px;
+    border: 1px solid black;
+    margin-left: 50px; 
+    border: 1px solid var(--search-bar); 
+    box-shadow: 1px 1px var(--text-color);
+    border-radius: 10px;
+}
+
+.big-first-box .one-box-usr,
+.big-first-box .one-box-hist{
+    width: 1000px;
+    height: 700px;
+    border: 1px solid var(--search-bar);
+    box-shadow: 1px 1px var(--text-color);
+    text-align: center;
+    border-radius: 10px;
+}
+
+.info {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px; /* Space between each info-box */
+}
+
+.info-box {
+    width: 48%; /* Two boxes per row */
+    padding: 10px;
+    border: 1px solid var(--search-bar);
+    border-radius: 5px;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+    background-color: var(--background-color);
+    margin-left: 7px;
+    background-color: var(--search-bar);
+    text-align: center;
+    justify-content: center;
+}
+
+.info-box p{
+    font-size: 20px;
+}
+
+.one-box-usr, .one-box-hist p{
+    font-size: 30px;
+}
+
 
 footer{
     position: fixed;

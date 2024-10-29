@@ -8,10 +8,16 @@ const body = document.querySelector("body"),
 //Js Code for toggle user
 const dashToggle = document.querySelector(".home"),
     userToggle = document.querySelector(".home-2"),
-    acadToggle = document.querySelector(".home-3"),
+    histToggle = document.querySelector(".home-3"),
     firstItems = document.querySelector(".first-items"),
     secondItems = document.querySelector(".second-items"),
     thirdItems = document.querySelector(".third-items");
+
+//Js Code for content
+const dashcont = document.querySelector(".one-box-dash"),
+    dashcont2 = document.querySelector(".two-box-dash"),
+    usrcont = document.querySelector(".one-box-usr"),
+    histcont = document.querySelector(".one-box-hist");
 
     let getMode = localStorage.getItem("mode") ;
     if (getMode && getMode == "dark-mode"){
@@ -54,11 +60,20 @@ const dashToggle = document.querySelector(".home"),
     //Js Code to toggle visibility of content
     dashToggle.addEventListener("click", ()=>{
         firstItems.classList.toggle("displayed");
-        firstItems.classList.toggle("hidden");
+        firstItems.classList.toggle("hidden");    
         secondItems.classList.add("hidden"); // Hide user items if dashboard is shown
         secondItems.classList.remove("displayed");
         thirdItems.classList.add("hidden"); // Hide user items if dashboard is shown
         thirdItems.classList.remove("displayed");
+
+        dashcont.classList.toggle("displayed");
+        dashcont.classList.toggle("hidden");   
+        dashcont2.classList.toggle("displayed");
+        dashcont2.classList.toggle("hidden");    
+        usrcont.classList.add("hidden");
+        usrcont.classList.remove("displayed");
+        histcont.classList.add("hidden");
+        histcont.classList.remove("displayed");
     })
 
     userToggle.addEventListener("click", ()=>{
@@ -68,15 +83,33 @@ const dashToggle = document.querySelector(".home"),
         firstItems.classList.remove("displayed");
         thirdItems.classList.add("hidden"); // Hide user items if dashboard is shown
         thirdItems.classList.remove("displayed");
+
+        dashcont.classList.remove("displayed");
+        dashcont.classList.add("hidden");   
+        dashcont2.classList.remove("displayed");
+        dashcont2.classList.add("hidden");    
+        usrcont.classList.toggle("hidden");
+        usrcont.classList.toggle("displayed");
+        histcont.classList.add("hidden");
+        histcont.classList.remove("displayed");
     })
 
-    acadToggle.addEventListener("click", ()=>{
+    histToggle.addEventListener("click", ()=>{
         thirdItems.classList.toggle("displayed");
         thirdItems.classList.toggle("hidden");
         firstItems.classList.add("hidden"); // Hide dashboard items if user is shown
         firstItems.classList.remove("displayed");
         secondItems.classList.add("hidden"); // Hide user items if dashboard is shown
         secondItems.classList.remove("displayed");
+
+        dashcont.classList.remove("displayed");
+        dashcont.classList.add("hidden");   
+        dashcont2.classList.remove("displayed");
+        dashcont2.classList.add("hidden");    
+        usrcont.classList.add("hidden");
+        usrcont.classList.remove("displayed");
+        histcont.classList.toggle("hidden");
+        histcont.classList.toggle("displayed");
     })
 
     
