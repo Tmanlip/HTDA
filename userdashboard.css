@@ -14,9 +14,9 @@
     --nav-color: gold;
     --side-nav: gold;
     --text-color: black;
-    --search-bar: white;
+    --search-bar: rgb(143, 140, 140);
     --search-text: black;
-    --box-color: gray;
+    --box-color: white;
 }
 
 body{
@@ -33,7 +33,7 @@ body.dark{
     --text-color: gold;
     --search-bar: maroon;
     --search-text: gold;
-    --box-color: maroon;
+    --box-color: black;
 }
 
 nav{
@@ -254,7 +254,8 @@ main .first-box {
     display: flex; /* Makes it a flex container */
     flex-direction: column; /* Aligns children vertically */
     padding: 20px; /* Adds some padding inside the box */
-    color: var(--text-color)
+    color: var(--text-color);
+    background-color: var(--box-color);
 }
 
 .first-box p {
@@ -276,7 +277,7 @@ main .first-box {
 .first-box .icon-box .home-3{
     width: 100px;
     height: 100px;
-    border: 1px solid white;
+    border: 1px solid var(--text-color);
     display: flex;
     justify-content: center; /* Centers icon horizontally */
     align-items: center; /* Centers icon vertically */
@@ -329,6 +330,10 @@ main .first-box {
     margin-top: 8px; /* Space between icon and text */
     font-size: 13px; /* Adjust size as needed */
     text-align: center; /* Center text under icon */
+}
+
+main .student{
+    margin-top: 100px;
 }
 
 main .second-big-box{
@@ -394,6 +399,14 @@ main .second-big-box{
     border-radius: 10px;
 } 
 
+.one-box-dash ul{
+    margin: 20px 30px;
+}
+.one-box-dash p, .two-box-dash p{
+    margin: 10px 20px;
+    font-size: 40px;
+}
+
 .big-first-box .two-box-dash{
     width: 400px;               /* Adjust width to fit within .big-first-box */
     height: 700px;
@@ -404,8 +417,21 @@ main .second-big-box{
     border-radius: 10px;
 }
 
-.big-first-box .one-box-usr,
-.big-first-box .one-box-hist{
+.big-first-box .two-box-dash .announcement-content {
+    color: var(--text-color);      /* Utilize text color variable */
+    overflow-y: auto;
+    scrollbar-width: none;
+}
+
+.announcement-content::-webkit-scrollbar{
+    display: none;
+}
+
+.announcement-content p{
+    font-size: 20px;
+}
+
+.big-first-box .one-box-usr{
     width: 1000px;
     height: 700px;
     border: 1px solid var(--search-bar);
@@ -414,6 +440,15 @@ main .second-big-box{
     border-radius: 10px;
 }
 
+.big-first-box .one-box-hist{
+    width: 1000px;
+    height: 700px;
+    border: 1px solid var(--search-bar);
+    box-shadow: 1px 1px var(--text-color);
+    text-align: center;
+    border-radius: 10px;
+    padding: 10px;
+}
 .info {
     margin-top: 20px;
     display: flex;
@@ -427,20 +462,42 @@ main .second-big-box{
     border: 1px solid var(--search-bar);
     border-radius: 5px;
     box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
-    background-color: var(--background-color);
     margin-left: 7px;
-    background-color: var(--search-bar);
+    background-color: var(--box-color);
     text-align: center;
     justify-content: center;
 }
 
 .info-box p{
     font-size: 20px;
+    color: var(--text-color);
 }
 
 .one-box-usr, .one-box-hist p{
     font-size: 30px;
 }
+
+.seminar-history {
+    padding: 20px;
+    max-height: 650px;
+    overflow-y: auto;
+    scrollbar-width: none;
+}
+
+.seminar-history::-webkit-scrollbar{
+    display: none;
+}
+
+.seminar-record {
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid var(--text-color);
+    border-radius: 5px;
+    text-align: left;
+    background-color: var(--box-color);
+    color: var(--text-color);
+}
+
 
 
 footer{

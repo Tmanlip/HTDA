@@ -112,5 +112,27 @@ const dashcont = document.querySelector(".one-box-dash"),
         histcont.classList.toggle("displayed");
     })
 
-    
+    function login() {
+        const email = document.getElementById('email').value;
+        const studentEmail = 'student@example.com';  // Dummy student email
+        const lecturerEmail = 'lecturer@example.com'; // Dummy lecturer email
+        const errorMsg = document.getElementById('errorMsg');
 
+        // Clear previous error message
+        errorMsg.textContent = '';
+
+        // Hide both dashboards initially
+        document.getElementById('studentDashboard').classList.remove('active');
+        document.getElementById('lecturerDashboard').classList.remove('active');
+
+        if (email === studentEmail) {
+            // Show student dashboard
+            document.getElementById('.studentDashboard').classList.add('active');
+        } else if (email === lecturerEmail) {
+            // Show lecturer dashboard
+            document.getElementById('.lecturerDashboard').classList.add('active');
+        } else {
+            // Show error message if email doesn't match
+            errorMsg.textContent = 'Invalid email. Please enter a valid email.';
+        }
+    }
