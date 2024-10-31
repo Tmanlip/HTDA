@@ -8,6 +8,7 @@
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
 }
+
 /* Colours */
 :root{
     --body-color: maroon;
@@ -117,7 +118,6 @@ nav .nav-bar .logo a{
     opacity: 1;
 }
 
-
 .nav-bar .darkLight-searchBox{
     display: flex;
     align-items: center;
@@ -170,7 +170,6 @@ nav .nav-bar .logo a{
     opacity: 0;
     pointer-events: none;
 }
-
 
 .searchBox{
     position: relative;
@@ -330,10 +329,6 @@ main .first-box {
     margin-top: 8px; /* Space between icon and text */
     font-size: 13px; /* Adjust size as needed */
     text-align: center; /* Center text under icon */
-}
-
-main .student{
-    margin-top: 100px;
 }
 
 main .second-big-box{
