@@ -33,5 +33,5 @@ document.getElementById("submit").addEventListener('click', function(e){
     })
 
     alert("Login Succesfull  !") ;
-
+    location = location['Login.html'];
 })
