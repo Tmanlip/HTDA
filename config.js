@@ -25,13 +25,47 @@ const analytics = getAnalytics(app);
 const db = getDatabase(app);
 
 document.getElementById("submit").addEventListener('click', function(e){
-  e.preventDefault();
-  set(ref(db, 'user/' + document.getElementById("username").value),
-    {
-        username: document.getElementById("username").value,
-        email: document.getElementById("password").value
-    })
+  const username = document.getElementById("username").value;
+  const password = document.getElementById("password").value;
 
-    alert("Login Succesfull  !") ;
-    location = location['Login.html'];
-})
+  // Check if the username and password fields are not empty
+  if (username === '' || password === '') {
+    alert("Please fill in both username and password fields.");
+    return;
+  }
+      
+  // Check in the 'students' and 'lecturers' paths
+  const studentRef = ref(db, 'user/Student');
+  const lecturerRef = ref(db, 'user/Lecturer');
+
+  const checkCredentials = (userRef, userType) => {
+    get(userRef).then((snapshot) => {
+      let userFound = false;
+
+      snapshot.forEach((childSnapshot) => {
+        const userData = childSnapshot.val();
+        if (userData.username === username && userData.password === password) {
+          userFound = true;
+          alert("Login Successful! Welcome " + userType + "!");
+          location.href = "UserDashboard.html"; // Redirect to the user dashboard
+        }
+
+        if (userFound == "false") {
+          alert("Incorrect username or password. Please try again.");
+        }
+      });
+
+    }).catch((error) => {
+      console.error("Error fetching user data:", error);
+      alert("An error occurred. Please try again later.");
+    });
+};
+
+// Check both student and lecturer references
+checkCredentials(studentRef, "Student");
+checkCredentials(lecturerRef, "Lecturer");
+  
+}) 
+
+    
+
