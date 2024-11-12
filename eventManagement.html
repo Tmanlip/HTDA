@@ -1,0 +1,112 @@
+<html>
+<head>
+    <title>Event and Scheduling Subsystem</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script>
+        function toggleDarkMode() {
+            document.documentElement.classList.toggle('dark');
+        }
+    </script>
+</head>
+<body class="bg-red-900">
+    <nav class="bg-yellow-500 p-4 flex justify-between items-center">
+        <div class="text-black font-bold text-xl">TutorXcells</div>
+        <div class="flex space-x-4">
+            <a href="#" class="text-black font-semibold">Home</a>
+            <a href="#" class="text-black font-semibold">User list</a>
+            <a href="#" class="text-black font-semibold">Registration</a>
+            <a href="#" class="text-black font-semibold">Setting</a>
+        </div>
+        <div class="flex space-x-4 items-center">
+            <button onclick="toggleDarkMode()" class="text-black font-semibold"><i class="fas fa-moon"></i></button>
+            <a href="#" class="text-black font-semibold"><i class="fas fa-search"></i></a>
+            <button class="bg-red-500 text-white px-4 py-2 rounded">Logout</button>
+        </div>
+    </nav>
+    <div class="container mx-auto mt-8">
+        <div class="bg-gray-700 p-6 rounded-lg">
+            <h2 class="text-center text-black font-bold text-2xl mb-4">Event and Scheduling Subsystem</h2>
+            <div class="mb-6">
+                <h3 class="text-black font-bold text-xl mb-2">Create Event</h3>
+                <form class="bg-gray-300 p-4 rounded-lg">
+                    <div class="mb-4">
+                        <label class="block text-black mb-2" for="event-name">Event Name</label>
+                        <input class="w-full p-2 rounded" type="text" id="event-name" placeholder="Enter event name">
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-black mb-2" for="event-date">Date</label>
+                        <input class="w-full p-2 rounded" type="date" id="event-date">
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-black mb-2" for="event-time">Time</label>
+                        <input class="w-full p-2 rounded" type="time" id="event-time">
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-black mb-2" for="event-location">Location</label>
+                        <input class="w-full p-2 rounded" type="text" id="event-location" placeholder="Enter location (physical or virtual)">
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-black mb-2" for="event-speaker">Speaker Information</label>
+                        <input class="w-full p-2 rounded" type="text" id="event-speaker" placeholder="Enter speaker information">
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-black mb-2" for="event-description">Description</label>
+                        <textarea class="w-full p-2 rounded" id="event-description" placeholder="Enter event description"></textarea>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-black mb-2" for="event-category">Category</label>
+                        <select class="w-full p-2 rounded" id="event-category">
+                            <option>Academic</option>
+                            <option>Career-related</option>
+                            <option>Skill Development</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-black mb-2" for="event-recurring">Recurring Event</label>
+                        <input type="checkbox" id="event-recurring">
+                        <label for="event-recurring" class="text-black ml-2">Yes</label>
+                    </div>
+                    <button class="bg-green-500 text-white px-4 py-2 rounded">Create Event</button>
+                </form>
+            </div>
+            <div>
+                <h3 class="text-black font-bold text-xl mb-2">Upcoming Events</h3>
+                <table class="w-full text-left">
+                    <thead>
+                        <tr class="bg-yellow-500">
+                            <th class="p-2">Event Name</th>
+                            <th class="p-2">Date</th>
+                            <th class="p-2">Time</th>
+                            <th class="p-2">Location</th>
+                            <th class="p-2">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody class="bg-gray-300">
+                        <tr class="border-b border-gray-400">
+                            <td class="p-2">Seminar on AI</td>
+                            <td class="p-2">2023-10-15</td>
+                            <td class="p-2">10:00 AM</td>
+                            <td class="p-2">Room 101</td>
+                            <td class="p-2">
+                                <button class="bg-green-500 text-white px-2 py-1 rounded">Edit</button>
+                                <button class="bg-red-500 text-white px-2 py-1 rounded">Delete</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="p-2">Workshop on Data Science</td>
+                            <td class="p-2">2023-10-20</td>
+                            <td class="p-2">2:00 PM</td>
+                            <td class="p-2">Online (Zoom)</td>
+                            <td class="p-2">
+                                <button class="bg-green-500 text-white px-2 py-1 rounded">Edit</button>
+                                <button class="bg-red-500 text-white px-2 py-1 rounded">Delete</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
