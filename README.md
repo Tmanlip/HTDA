@@ -7,10 +7,7 @@ TutorXcells
 This project includes structured file organization with directories and links for easier navigation.
 
 ## Directory Table
-**Author**: [Tengku Muhammad Aiman Aliff]
-
-The table below provides an overview of the main files and their corresponding directories.
-
+**Author**: *Tengku Muhammad Aiman Aliff*
 Sprint 1:
 <table>
   <tr>
@@ -23,13 +20,5 @@ Sprint 1:
   </tr>
 </table>
 
----
 
-## Usage
-
-To access files, navigate to the specified directory and open the respective file.
-
-```bash
-cd /path/to/directory1/
-cat file1.txt
 
