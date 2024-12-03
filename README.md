@@ -8,6 +8,7 @@ This project includes structured file organization with directories and links fo
 
 ## Directory Table
 **Author**: *Tengku Muhammad Aiman Aliff*
+
 Sprint 1:
 <table>
   <tr>
