@@ -14,8 +14,12 @@ The table below provides an overview of the main files and their corresponding d
 Sprint 1:
 <table>
   <tr>
-    <th>Login.php</th>
-    <th><a href="Tengku Aiman/User Management">click Me</a></th>
+    <th>Login</th>
+    <th><a href="Tengku Aiman/User Management/login.php">click Me</a></th>
+  </tr>
+  <tr>
+    <th>Student Dashboard</th>
+    <th><a href="Tengku Aiman/User Management/StudentDashboard.php">Click Me</a></th>
   </tr>
 </table>
 
