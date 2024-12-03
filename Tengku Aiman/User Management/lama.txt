@@ -1,0 +1,110 @@
+<?php
+require 'db_connect.php';
+session_start();
+
+// Check if the form is submitted
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $user = isset($_POST['username']) ? $_POST['username'] : '';
+    $pass = isset($_POST['password']) ? $_POST['password'] : '';
+
+    // Fetch user from database
+    $stmt = $conn->prepare("SELECT * FROM student WHERE username = ?");
+    $stmt->bind_param("s", $user);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    if ($result->num_rows > 0) {
+        $row = $result->fetch_assoc();
+        // Verify password
+        if (password_verify($pass, $row['password'])) {
+            // Login successful
+            $_SESSION['username'] = $user;
+            header("Location: StudentDashboard.php");
+            exit();
+        } else{
+            $stmt = $conn->prepare("SELECT * FROM lecturer WHERE username = ?");
+
+            $stmt->bind_param("ss", $input_username, $input_username);
+            $stmt->execute();
+
+            // Store the result
+            $result = $stmt->get_result();
+
+            if ($result->num_rows > 0) {
+                $row = $result->fetch_assoc();
+                // Verify password
+                if (password_verify($pass, $row['password'])) {
+                    // Login successful
+                    $_SESSION['username'] = $user;
+                    header("Location: LecturerDashboard.php");
+                    exit();
+                }
+            }
+
+        }
+    } else {
+        // User not found
+        $login_error = "Invalid username or password.";
+    }
+
+    $stmt->close();
+
+}
+
+
+$conn->close();
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+    <link rel="stylesheet" href="login.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <header>
+        <img src="Logo-UTM-white.png" alt="UTM Logo" class="header-image">
+        <i class='bx bx-x exem'></i>
+        <span class="text">TutorXcells</span>
+    </header>
+
+    <main>
+        <div class="login-wrapper">
+            <form action="login.php" method="POST">
+                <h2>Login</h2>
+
+                <div class="input-field">
+                    <input type="text" id="username" required>
+                    <label>Enter your username</label>
+                </div>
+
+                <div class="input-field">
+                    <input type="password" id="password" required>
+                    <label>Enter your password</label>
+                </div>
+
+                <div class="password-options">
+                    <label for="remember">
+                        <input type="checkbox" id="remember">
+                        <p>Remember me</p>
+                    </label>
+
+                    <label for="Forgot">
+                        <a href="ForgotPassword.php">Forgot Password</a>
+                    </label>
+                </div>
+
+                <button type="submit" id="submit">Log In</button>
+            </form>
+        </div>
+    </main>
+    
+    <script src="script.js"></script>
+
+</body>
+</html>
