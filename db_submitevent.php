@@ -35,7 +35,7 @@ if (!empty($eventName) && !empty($date) && !empty($time) && !empty($location) &&
         echo "Error: " . $sql . "<br>" . $conn->error;
     }
 } else {
-    echo "Error: Please fill all required fields.";
+    
 }
 
 // Close connection

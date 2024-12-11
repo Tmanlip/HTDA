@@ -21,11 +21,17 @@ include 'db_submitevent.php' ;
             <a href="#" class="text-black font-semibold">Registration</a>
             <a href="#" class="text-black font-semibold">Setting</a>
         </div>
+        <div class="flex space-x-8 items-center">
+            <button onclick="toggleDarkMode()" class="text-black font-semibold"><i class="bx bx-moon moon"></i></button>
+            <a href="#" class="text-black font-semibold"><i class="fas fa-search"></i></a>
+            <button class="bg-red-500 text-white px-4 py-2 rounded">Logout</button>
+        </div>
     </nav>
 
     <div class="container mx-auto mt-8">
     <div class="bg-gray-700 p-6 rounded-lg">
         <h2 class="text-center text-white font-bold text-2xl mb-4">Event and Scheduling Form</h2>
+        <!-- FOrm yang connect dengan db -->
         <form action="db_submitevent.php" method="POST" class="bg-gray-300 p-4 rounded-lg space-y-4">
             <!-- Event Name -->
             <div>
