@@ -11,28 +11,30 @@
 
 /* Colours */
 :root{
-    --body-color: maroon;
+    --body-color: white;
     --nav-color: gold;
     --side-nav: gold;
-    --text-color: black;
-    --search-bar: rgb(143, 140, 140);
-    --search-text: black;
-    --box-color: white;
+    --text-color: maroon;
+    --search-bar: rgb(220, 182, 182);
+    --search-text: maroon;
+    --box-color: rgb(147, 143, 143);
 }
 
 body{
-    height: 200vh;
-    background-color: var(--body-color);
-    display: flex;
+    height: 100%;
     margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--body-color);
 }
 
 body.dark{
-    --body-color: rgb(70, 66, 66);
-    --nav-color: gray;
-    --side-nav: gray;
+    --body-color: gray;
+    --nav-color: maroon;
+    --side-nav: maroon;
     --text-color: gold;
-    --search-bar: maroon;
+    --search-bar: rgb(237, 235, 235);
     --search-text: gold;
     --box-color: black;
 }
@@ -231,9 +233,13 @@ nav .nav-bar .logo a{
     cursor: pointer;
 }
 
+.logout a{
+    color: var(--text-color);
+}
+
 main{
     width: 100%;
-    min-height: 100vh;
+    min-height: 120vh;
     font-family: "Open Sans", sans-serif;
     align-items: center;
     justify-content: center;
@@ -257,10 +263,26 @@ main .first-box {
     background-color: var(--box-color);
 }
 
+.profile-cont{
+    transform: translateY(-1px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%; /* Optional, depends on your layout */
+}
+
+.profile-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 50px;
+} 
+
 .first-box p {
     font-size: 30px;
     text-align: center;
-    margin-bottom: 200px; /* Space between title and icon boxes */
+    margin-bottom: 50px; /* Space between title and icon boxes */
 }
 
 .first-box .icon-box{
@@ -388,10 +410,10 @@ main .second-big-box{
 
 .big-first-box .one-box-dash{
     width: 550px;
-    height: 700px;
     border: 1px solid var(--search-bar); 
     box-shadow: 1px 1px var(--text-color);
     border-radius: 10px;
+    padding: 20px;
 } 
 
 .one-box-dash ul{
@@ -404,12 +426,12 @@ main .second-big-box{
 
 .big-first-box .two-box-dash{
     width: 400px;               /* Adjust width to fit within .big-first-box */
-    height: 700px;
     border: 1px solid black;
     margin-left: 50px; 
     border: 1px solid var(--search-bar); 
     box-shadow: 1px 1px var(--text-color);
     border-radius: 10px;
+    padding: 20px;
 }
 
 .big-first-box .two-box-dash .announcement-content {
@@ -428,21 +450,20 @@ main .second-big-box{
 
 .big-first-box .one-box-usr{
     width: 1000px;
-    height: 700px;
     border: 1px solid var(--search-bar);
     box-shadow: 1px 1px var(--text-color);
     text-align: center;
     border-radius: 10px;
+    padding: 20px;
 }
 
 .big-first-box .one-box-hist{
     width: 1000px;
-    height: 700px;
     border: 1px solid var(--search-bar);
     box-shadow: 1px 1px var(--text-color);
     text-align: center;
     border-radius: 10px;
-    padding: 10px;
+    padding: 20px;
 }
 .info {
     margin-top: 20px;
@@ -493,21 +514,18 @@ main .second-big-box{
     color: var(--text-color);
 }
 
-
-
 footer{
-    position: fixed;
+    position: relative;
+    margin-top: auto; /* Push footer to the bottom */
     background: var(--nav-color);
-    width: 100%;
-    bottom: 0;
-    left: 0;
+    text-align: center;
 }
 
 footer::before{
     content: '';
     position: absolute;
     left: 0;
-    top: 100px;
+    bottom: 0; /* Ensure it stays at the bottom */
     height: 1px;
     width: 100%;
     background: var(--body-color);

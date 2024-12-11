@@ -1,3 +1,75 @@
+<?php
+require 'C:\xampp\htdocs\HiTDA\db_connect.php';
+session_start();
+
+// Check if session is active
+if (!isset($_SESSION['username'])) {
+    // Check for "Remember me" cookie
+    if (isset($_COOKIE['username'])) {
+        $_SESSION['username'] = $_COOKIE['username'];
+        // Redirect to ensure session data is consistent
+        header("Location: StudentDashboard.php");
+        exit();
+    } else {
+        // If neither session nor cookie is set, redirect to login page
+        header("Location: login.php");
+        exit();
+    }
+}
+
+// (Optional) Extend session inactivity timeout to 20 minutes
+if (isset($_SESSION['last_activity']) && (time() - $_SESSION['last_activity'] > 1200)) {
+    // Session expired after 20 minutes of inactivity
+    session_unset();
+    session_destroy();
+    setcookie("username", "", time() - 3600, "/"); // Clear "Remember me" cookie if it exists
+    header("Location: login.php");
+    exit();
+}
+$_SESSION['last_activity'] = time(); // Update last activity time
+
+$username = $_SESSION['username'];
+
+// Fetch student information including course code
+$stmt = $conn->prepare("SELECT stud_name, matric_no, course, course_code, email, phone_number, image_data FROM student WHERE username = ?");
+$stmt->bind_param("s", $username);
+$stmt->execute();
+$stmt->bind_result($name, $matricNo, $course, $courseCode, $email, $phoneNumber, $image);
+$stmt->fetch();
+$stmt->close();
+
+// Fetch student details
+$stmt = $conn->prepare("SELECT id FROM student WHERE username = ?");
+$stmt->bind_param("s", $username);
+$stmt->execute();
+$stmt->store_result();
+
+if ($stmt->num_rows > 0) {
+    // If student
+    $stmt->bind_result($userId);
+    $stmt->fetch();
+    $isStudent = true;
+    $userIdField = 'student_id';
+} else {
+    // Not a student, redirect to login
+    header("Location: login.php");
+    exit();
+}
+
+// Fetch the seminar history for the student
+$query = "SELECT s.event_name, s.seminar_date, s.description, s.place, p.status
+          FROM seminar s
+          JOIN participation p ON s.id = p.seminar_id
+          WHERE p.student_id = ? AND p.role = 'student'
+          ORDER BY s.seminar_date DESC";
+
+$stmt = $conn->prepare($query);
+$stmt->bind_param("i", $userId);
+$stmt->execute();
+$stmt->bind_result($title, $date, $description, $location, $status);
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -52,16 +124,27 @@
                             <input type="text" placeholder="Search...">
                             <i class='bx bx-search'></i>
                         </div>
-                        
                     </div>
                 </div>
+
+                <span class="logout"><a href="logout.php" style="text-decoration: none;">Log Out</a></span>
             </div>
         </nav>
 
         <main>
             <div class="first-box">
                 <p>Profile</p>
-                
+
+                <div class="profile-cont">
+                    <!-- Display Profile Image -->
+                    <?php if ($image): ?>
+                        <img src="data:image/jpeg;base64,<?php echo base64_encode($image); ?>" alt="Profile Image" class="profile-image">
+                    <?php else: ?>
+                    <!-- Default Profile Icon if No Image is Set -->
+                        <i class='bx bx-user-circle prof'></i>
+                    <?php endif; ?> 
+                </div>
+
                 <div class="icon-box">
                     <div class="home">
                         <i class='bx bx-home-alt-2 prof'></i>
@@ -106,8 +189,6 @@
                             <li>This is a platform for students to gain notes or exercise to the course</li>
                             <li>There is also seminars or academic events that will be advertise later by PERSAKA</li>
                         </ul>
-
-                        <!-- Lecturer-->
                     </div>
         
                     <div class="two-box-dash">
@@ -124,65 +205,42 @@
     
                         <div class="info">
                             <div class="info-box">
-                                <p><strong>NAME: </strong>TENGKU MUHAMMAD AIMAN ALIFF BIN TENGKU AZEEZEE</p>
+                                <p><strong>NAME: </strong><?php echo htmlspecialchars($name); ?></p>
                             </div>
-        
                             <div class="info-box">
-                                <p><strong>MATRIC NUMBER: </strong>A22EC0283</p>
+                                <p><strong>MATRIC NUMBER: </strong><?php echo htmlspecialchars($matricNo); ?></p>
                             </div>
-        
                             <div class="info-box">
-                                <p><strong>COURSE: </strong>3/SECRH</p>
+                                <p><strong>COURSE: </strong><?php echo htmlspecialchars($course); ?></p>
                             </div>
-                            
                             <div class="info-box">
-                                    <p><strong>EMAIL: </strong>tengku03@graduate.utm.my</p>
+                                <p><strong>COURSE CODE: </strong><?php echo htmlspecialchars($courseCode); ?></p>
                             </div>
-    
                             <div class="info-box">
-                                <p><strong>PHONE NUMBER: </strong>012-3485588</p>
+                                <p><strong>EMAIL: </strong><?php echo htmlspecialchars($email); ?></p>
                             </div>
-                        </div>
-                        
+                            <div class="info-box">
+                                <p><strong>PHONE NUMBER: </strong><?php echo htmlspecialchars($phoneNumber); ?></p>
+                            </div>
+                        </div>    
                     </div>
     
                     <div class="one-box-hist hidden">
                         <p>HISTORY</p>
                         <div class="seminar-history">
-                            <div class="seminar-record">
-                                <h3>Seminar on Web Development</h3>
-                                <p>Date: 2024-09-15</p>
-                                <p>Location: UTM Hall A</p>
-                                <p>Description: An introductory seminar on modern web development techniques and best practices.</p>
-                            </div>
-                                
-                            <div class="seminar-record">
-                                <h3>AI in Education</h3>
-                                <p>Date: 2024-09-25</p>
-                                <p>Location: UTM Conference Center</p>
-                                <p>Description: Discusses the impact of artificial intelligence in the education sector.</p>
-                            </div>
-                                
-                            <div class="seminar-record">
-                                <h3>Cybersecurity Essentials</h3>
-                                <p>Date: 2024-10-05</p>
-                                <p>Location: IT Building Room 101</p>
-                                <p>Description: Covers fundamental concepts of cybersecurity and protection against common threats.</p>
-                            </div>
-                                
-                            <div class="seminar-record">
-                                <h3>Data Science for Beginners</h3>
-                                <p>Date: 2024-10-12</p>
-                                <p>Location: Science Lab Room 5</p>
-                                <p>Description: An introductory course on data science methodologies and tools.</p>
-                            </div>
-                                
-                            <div class="seminar-record">
-                                <h3>Networking Fundamentals</h3>
-                                <p>Date: 2024-10-20</p>
-                                <p>Location: UTM Library Auditorium</p>
-                                <p>Description: A foundational seminar covering basic networking principles and protocols.</p>
-                            </div>
+                            <?php while ($stmt->fetch()): ?>
+                                <div class="seminar-record">
+                                <h4><?php echo htmlspecialchars($title); ?></h4>
+                                <p><strong>Date:</strong> <?php echo htmlspecialchars($date); ?></p>
+                                <p><strong>Location:</strong> <?php echo htmlspecialchars($location); ?></p>
+                                <p><strong>Description:</strong> <?php echo htmlspecialchars($description); ?></p>
+                                <p><strong>Status:</strong> <?php echo htmlspecialchars($status); ?></p>
+                                </div>
+                            <?php endwhile; ?>
+        
+                            <?php if ($stmt->num_rows == 0): ?>
+                                <p>No seminars found in your history.</p>
+                            <?php endif; ?>
                         </div>
                     </div>
                 </div>
@@ -197,14 +255,10 @@
 
         <script src="script.js"></script>
 
-        <!-- <footer>
+        <footer>
             <div class="content">
                 <div class="top">
                     <div class="logo-details">
-                        <!-- <i class="fab fa-slack">
-                            <span class="logo_name">UTM</span>
-                        </i>
-
                         <img src="Logo-UTM-white.png" alt="UTM Logo" class="footer-image">
                     </div>
 
@@ -263,6 +317,6 @@
                     </span>
                 </div>
             </div>
-        </footer> -->
+        </footer>
     </body>
 </html>
