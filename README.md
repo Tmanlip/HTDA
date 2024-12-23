@@ -33,7 +33,7 @@ Sprint 1:
   </tr>
   <tr>
     <th>Admin Dashboard</th>
-    <th><a href="Sprint1_Administrative Dashboard/AdminDashboard.html">Click Me</a></th>
+    <th><a href="Sprint1_Administrative Dashboard/AdminHome.html">Click Me</a></th>
   </tr>
   </table>
 
