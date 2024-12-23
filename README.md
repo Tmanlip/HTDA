@@ -11,6 +11,7 @@ This project includes structured file organization with directories and links fo
 
 Sprint 1:
 <table>
+<caption>User Management</caption>
   <tr>
     <th>Login</th>
     <th><a href="Tengku Aiman/User Management/login.php">click Me</a></th>
@@ -23,6 +24,18 @@ Sprint 1:
     <th>Lecturer Dashboard</th>
     <th><a href="Tengku Aiman/User Management/LecturerDashboard.php">Click Me</a></th>
   </tr>
+
+  <table>
+  <caption>Administrative Dashboard</caption>
+  <tr>
+    <th>Admin Login</th>
+    <th><a href="Sprint1_Administrative Dashboard/AdminLogin.php">click Me</a></th>
+  </tr>
+  <tr>
+    <th>Admint Dashboard</th>
+    <th><a href="Sprint1_Administrative Dashboard/AdminDashboard.html">Click Me</a></th>
+  </tr>
+  <tr>
 
   Sprint 2:
 <table>
