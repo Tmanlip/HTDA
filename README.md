@@ -35,7 +35,7 @@ Sprint 1:
     <th>Admint Dashboard</th>
     <th><a href="Sprint1_Administrative Dashboard/AdminDashboard.html">Click Me</a></th>
   </tr>
-  <tr>
+  </table>
 
   Sprint 2:
 <table>
