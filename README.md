@@ -35,6 +35,14 @@ Sprint 1:
     <th>Admin Dashboard</th>
     <th><a href="Sprint1_Administrative Dashboard/AdminHome.html">Click Me</a></th>
   </tr>
+
+  <table>
+<caption>Event Management and Scheduling - Dennish</caption>
+  <tr>
+    <th>Create Event</th>
+    <th><a href="event_form.php">click Me</a></th>
+  </tr>
+    
   </table>
 
   Sprint 2:
