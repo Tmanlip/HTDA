@@ -37,13 +37,6 @@ Sprint 1:
   </tr>
   </table>
 
-  <table>
-<caption>Event Management and Scheduling - Dennish</caption>
-  <tr>
-    <th>Create Event</th>
-    <th><a href="event_form.php">click Me</a></th>
-  </tr>
-
   Sprint 2:
 <table>
   <caption>Article Management - Tengku</caption>
@@ -80,9 +73,9 @@ Sprint 1:
 </table>
 
   <table>
-<caption>User View Event - Dennish</caption>
+<caption>Event Page - Dennish</caption>
   <tr>
-    <th>Event Page</th>
+    <th>User View Event</th>
     <th><a href="eventPage.html">click Me</a></th>
   </tr>
 
