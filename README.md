@@ -40,7 +40,7 @@ Sprint 1:
   <table>
 <caption>Event Management and Scheduling - Dennish</caption>
   <tr>
-    <th>Event Management</th>
+    <th>Create Event</th>
     <th><a href="event_form.php">click Me</a></th>
   </tr>
 
@@ -80,7 +80,7 @@ Sprint 1:
 </table>
 
   <table>
-<caption>Event Management and Scheduling - Dennish</caption>
+<caption>User View Event - Dennish</caption>
   <tr>
     <th>Event Page</th>
     <th><a href="eventPage.html">click Me</a></th>
