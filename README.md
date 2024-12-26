@@ -37,6 +37,13 @@ Sprint 1:
   </tr>
   </table>
 
+  <table>
+<caption>Event Management and Scheduling - Dennish</caption>
+  <tr>
+    <th>Event Management</th>
+    <th><a href="event_form.php">click Me</a></th>
+  </tr>
+
   Sprint 2:
 <table>
   <caption>Article Management - Tengku</caption>
@@ -71,6 +78,13 @@ Sprint 1:
     <th><a href="Sprint2_Feedback and Reporting/TrackReport.php">Click Me</a></th>
   </tr>
 </table>
+
+  <table>
+<caption>Event Management and Scheduling - Dennish</caption>
+  <tr>
+    <th>Event Page</th>
+    <th><a href="eventPage.html">click Me</a></th>
+  </tr>
 
 
 
