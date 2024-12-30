@@ -86,6 +86,14 @@ Sprint 1:
     <th>User View Event</th>
     <th><a href="eventPage.html">click Me</a></th>
   </tr>
+</table>
 
+Sprint 3: 
 
+<table>
+<caption>Student Activity and Article Analytics - Tengku</caption>
+  <tr>
+    <th>Login</th>
+    <th><a href="Tengku Aiman/User Management/login.php">click Me</a></th>
+  </tr>
 
