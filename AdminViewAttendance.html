@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Registered Participants</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <script>
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark');
+        }
+
+        // Function to delete a row
+        function deleteRow(button) {
+            const row = button.closest("tr"); // Find the closest table row
+            row.remove(); // Remove the row from the DOM
+        }
+    </script>
+</head>
+<body class="bg-red-900 text-black">
+    <nav class="bg-yellow-500 p-4 flex justify-between items-center sticky top-0 z-10 shadow-lg">
+        <div class="text-xl font-bold">TutorXcells</div>
+        <div class="space-x-4">
+            <a href="#home" class="hover:underline">Home</a>
+            <a href="#userlist" class="hover:underline">Userlist</a>
+            <a href="#" class="hover:underline">Profile</a>
+        </div>
+        <div class="flex items-center space-x-4">
+            <i class="fas fa-search"></i>
+            <button onclick="toggleDarkMode()" class="text-black font-semibold"><i class="bx bx-moon moon"></i></button>
+            <button class="bg-red-500 text-white px-4 py-2 rounded">Logout</button>
+        </div>
+    </nav>
+    <!-- Attendance Tracking Section -->
+    <div id="attendance" class="container mx-auto mt-8 p-4 bg-gray-300 rounded-lg">
+        <h1 class="text-center text-2xl font-bold text-black mb-4">Attendance Tracking</h1>
+
+        <!-- Event Selection -->
+        <div class="mb-4">
+            <label for="eventFilter" class="block text-gray-700 font-bold mb-2">Select Event:</label>
+            <select id="eventFilter" class="w-full border border-gray-300 p-2 rounded" onchange="filterParticipants()">
+                <option value="all">All Events</option>
+                <option value="event1">SADM Extra Class</option>
+                <option value="event2">OOP Extra Class</option>
+                <option value="event3">CM Extra Class</option>
+                <option value="event4">Mandarin Extra Class</option>
+                <option value="event5">Web Prog Extra Class</option>
+            </select>
+        </div>
+
+        <!-- Participants Table -->
+        <table class="table-auto w-full border-collapse border border-gray-300">
+            <thead>
+                <tr class="bg-gray-200">
+                    <th class="border border-gray-300 px-4 py-2">Participant Name</th>
+                    <th class="border border-gray-300 px-4 py-2">Email</th>
+                    <th class="border border-gray-300 px-4 py-2">Attendance Status</th>
+                    <th class="border border-gray-300 px-4 py-2">Actions</th>
+                </tr>
+            </thead>
+            <tbody id="attendanceTable">
+                <!-- Dynamic Rows -->
+            </tbody>
+        </table>
+
+        <!-- Summary Section -->
+        <div class="mt-8 bg-gray-100 p-4 rounded-lg">
+            <h2 class="text-xl font-bold mb-2">Attendance Summary</h2>
+            <p>Total Participants: <span id="totalParticipants">0</span></p>
+            <p>Total Present: <span id="totalPresent">0</span></p>
+            <p>Total Absent: <span id="totalAbsent">0</span></p>
+        </div>
+    </div>
+
+    <script>
+        // Mock Data for Events and Participants
+        const participants = [
+            { id: 1, name: "John Doe", email: "john.doe@example.com", event: "event1", status: "Absent" },
+            { id: 2, name: "Jane Smith", email: "jane.smith@example.com", event: "event1", status: "Present" },
+            { id: 3, name: "Emily Brown", email: "emily.brown@example.com", event: "event2", status: "Absent" },
+            { id: 4, name: "Michael Lee", email: "michael.lee@example.com", event: "event3", status: "Present" },
+        ];
+
+        // Render Participants
+        function renderParticipants(eventFilter = "all") {
+            const tableBody = document.getElementById("attendanceTable");
+            tableBody.innerHTML = ""; // Clear previous rows
+
+            const filteredParticipants = participants.filter(
+                participant => eventFilter === "all" || participant.event === eventFilter
+            );
+
+            filteredParticipants.forEach(participant => {
+                const row = `
+                    <tr>
+                        <td class="border border-gray-300 px-4 py-2">${participant.name}</td>
+                        <td class="border border-gray-300 px-4 py-2">${participant.email}</td>
+                        <td class="border border-gray-300 px-4 py-2">
+                            <select onchange="updateStatus(${participant.id}, this)" class="border border-gray-300 p-2 rounded">
+                                <option value="Present" ${participant.status === "Present" ? "selected" : ""}>Present</option>
+                                <option value="Absent" ${participant.status === "Absent" ? "selected" : ""}>Absent</option>
+                            </select>
+                        </td>
+                        <td class="border border-gray-300 px-4 py-2 text-center">
+                            <button onclick="removeParticipant(${participant.id})" class="bg-red-500 text-white px-3 py-1 rounded">Remove</button>
+                        </td>
+                    </tr>
+                `;
+                tableBody.innerHTML += row;
+            });
+
+            updateSummary(filteredParticipants);
+        }
+
+        // Update Attendance Status
+        function updateStatus(participantId, selectElement) {
+            const participant = participants.find(p => p.id === participantId);
+            if (participant) {
+                participant.status = selectElement.value;
+                renderParticipants(document.getElementById("eventFilter").value); // Refresh table
+            }
+        }
+
+        // Remove Participant
+        function removeParticipant(participantId) {
+            const index = participants.findIndex(p => p.id === participantId);
+            if (index > -1) {
+                participants.splice(index, 1);
+                renderParticipants(document.getElementById("eventFilter").value); // Refresh table
+            }
+        }
+
+        // Update Summary
+        function updateSummary(filteredParticipants) {
+            const totalParticipants = filteredParticipants.length;
+            const totalPresent = filteredParticipants.filter(p => p.status === "Present").length;
+            const totalAbsent = filteredParticipants.filter(p => p.status === "Absent").length;
+
+            document.getElementById("totalParticipants").textContent = totalParticipants;
+            document.getElementById("totalPresent").textContent = totalPresent;
+            document.getElementById("totalAbsent").textContent = totalAbsent;
+        }
+
+        // Filter Participants by Event
+        function filterParticipants() {
+            const eventFilter = document.getElementById("eventFilter").value;
+            renderParticipants(eventFilter);
+        }
+
+        // Initial Render
+        window.onload = () => {
+            renderParticipants();
+        };
+    </script>
+</body>
