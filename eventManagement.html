@@ -1,0 +1,126 @@
+<html>
+<head>
+    <title>Event and Scheduling Form</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <script>
+        function toggleDarkMode() {
+            document.documentElement.classList.toggle('dark');
+        }
+
+        function handleCreateEvent(event) {
+            event.preventDefault();
+
+            // Retrieve form values
+            const eventName = document.getElementById('event-name').value;
+            const eventDate = document.getElementById('event-date').value;
+            const eventTime = document.getElementById('event-time').value;
+            const eventLocation = document.getElementById('event-location').value;
+            const eventSpeaker = document.getElementById('event-speaker').value;
+            const eventDescription = document.getElementById('event-description').value;
+            const eventCategory = document.getElementById('event-category').value;
+            const isRecurring = document.getElementById('event-recurring').checked ? "Yes" : "No";
+
+            // Populate modal content
+            document.getElementById('modal-event-name').innerText = eventName;
+            document.getElementById('modal-event-date').innerText = eventDate;
+            document.getElementById('modal-event-time').innerText = eventTime;
+            document.getElementById('modal-event-location').innerText = eventLocation;
+            document.getElementById('modal-event-speaker').innerText = eventSpeaker;
+            document.getElementById('modal-event-description').innerText = eventDescription;
+            document.getElementById('modal-event-category').innerText = eventCategory;
+            document.getElementById('modal-event-recurring').innerText = isRecurring;
+
+            // Show modal
+            document.getElementById('event-modal').classList.remove('hidden');
+        }
+
+        function closeModal() {
+            document.getElementById('event-modal').classList.add('hidden');
+        }
+    </script>
+</head>
+<body class="bg-red-900">
+    <nav class="bg-yellow-500 p-4 flex justify-between items-center sticky top-0 z-10">
+        <div class="text-black font-bold text-xl">TutorXcells</div>
+        <div class="flex space-x-4 justify-center flex-grow">
+            <a href="#" class="text-black font-semibold">Home</a>
+            <a href="#" class="text-black font-semibold">User list</a>
+            <a href="#" class="text-black font-semibold">Registration</a>
+            <a href="#" class="text-black font-semibold">Setting</a>
+        </div>
+        <div class="flex space-x-8 items-center">
+            <button onclick="toggleDarkMode()" class="text-black font-semibold"><i class="bx bx-moon moon"></i></button>
+            <a href="#" class="text-black font-semibold"><i class="fas fa-search"></i></a>
+            <button class="bg-red-500 text-white px-4 py-2 rounded">Logout</button>
+        </div>
+    </nav>
+
+    <div class="container mx-auto mt-8">
+        <div class="bg-gray-700 p-6 rounded-lg">
+            <h2 class="text-center text-white font-bold text-2xl mb-4">Event and Scheduling Form</h2>
+            <div class="mb-6">
+                <h3 class="text-white font-bold text-xl mb-2">Create Event</h3>
+                <form class="bg-gray-300 p-4 rounded-lg" onsubmit="handleCreateEvent(event)">
+                    <div class="mb-4">
+                        <label class="block text-black mb-2" for="event-name">Event Name</label>
+                        <input class="w-full p-2 rounded" type="text" id="event-name" placeholder="Enter event name" required>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-black mb-2" for="event-date">Date</label>
+                        <input class="w-full p-2 rounded" type="date" id="event-date" required>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-black mb-2" for="event-time">Time</label>
+                        <input class="w-full p-2 rounded" type="time" id="event-time" required>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-black mb-2" for="event-location">Location</label>
+                        <input class="w-full p-2 rounded" type="text" id="event-location" placeholder="Enter location (physical or virtual)" required>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-black mb-2" for="event-speaker">Speaker Information</label>
+                        <input class="w-full p-2 rounded" type="text" id="event-speaker" placeholder="Enter speaker information" required>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-black mb-2" for="event-description">Description</label>
+                        <textarea class="w-full p-2 rounded" id="event-description" placeholder="Enter event description" required></textarea>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-black mb-2" for="event-category">Category</label>
+                        <select class="w-full p-2 rounded" id="event-category">
+                            <option>Academic</option>
+                            <option>Career-related</option>
+                            <option>Skill Development</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-black mb-2" for="event-recurring">Recurring Event</label>
+                        <input type="checkbox" id="event-recurring">
+                        <label for="event-recurring" class="text-black ml-2">Yes</label>
+                    </div>
+                    <button class="bg-green-500 text-white px-4 py-2 rounded">Create Event</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div id="event-modal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+        <div class="bg-white p-6 rounded-lg w-96">
+            <h3 class="text-black font-bold text-xl mb-4">Event Created Successfully!</h3>
+            <p><strong>Event Name:</strong> <span id="modal-event-name"></span></p>
+            <p><strong>Date:</strong> <span id="modal-event-date"></span></p>
+            <p><strong>Time:</strong> <span id="modal-event-time"></span></p>
+            <p><strong>Location:</strong> <span id="modal-event-location"></span></p>
+            <p><strong>Speaker:</strong> <span id="modal-event-speaker"></span></p>
+            <p><strong>Description:</strong> <span id="modal-event-description"></span></p>
+            <p><strong>Category:</strong> <span id="modal-event-category"></span></p>
+            <p><strong>Recurring:</strong> <span id="modal-event-recurring"></span></p>
+            <button class="bg-red-500 text-white px-4 py-2 rounded mt-4" onclick="closeModal()">Close</button>
+        </div>
+    </div>
+</body>
+</html>

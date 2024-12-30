@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE-edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="navbar.css">
+
+        <!-- Boxicons CSS-->
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+        <title>My Events Page</title>
+
+        <style>
+            /* Global Styles */
+            *{
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            body{
+                font-family: "Poppins", sans-serif;
+                margin-top: 80px; /* Space for fixed navbar */
+            }
+
+            nav{
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                background-color: #333;
+                z-index: 1000;
+            }
+
+            nav .nav-bar{
+                max-width: 1200px;
+                margin: auto;
+                padding: 10px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+
+            .menu .nav-links li{
+                list-style: none;
+                margin: 0 15px;
+            }
+
+            .nav-links li a{
+                color: white;
+                text-decoration: none;
+                font-size: 16px;
+                padding: 10px;
+                transition: background-color 0.3s;
+            }
+
+            .nav-links li a:hover{
+                background-color: #555;
+                border-radius: 4px;
+            }
+
+            /* Main Content Section */
+            .tabs-container{
+                margin: 30px;
+            }
+
+            .tabs{
+                display: flex;
+                border-bottom: 2px solid #ddd;
+            }
+
+            .tab{
+                flex: 1;
+                text-align: center;
+                padding: 10px;
+                cursor: pointer;
+                background-color: #f1f1f1;
+                font-weight: bold;
+                transition: background-color 0.3s;
+            }
+
+            .tab:hover{
+                background-color: #ddd;
+            }
+
+            .tab.active{
+                background-color: #ddd;
+                border-bottom: 2px solid #333;
+            }
+
+            .tab-content{
+                display: none;
+                padding: 20px;
+                background-color: #f9f9f9;
+            }
+
+            .tab-content.active{
+                display: block;
+            }
+
+            .event-list{
+                list-style-type: none;
+                padding: 0;
+            }
+
+            .event-list li{
+                background-color: #fff;
+                margin: 10px 0;
+                padding: 15px;
+                border-radius: 8px;
+                box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            }
+
+            .event-list li button{
+                background-color: #007bff;
+                color: white;
+                border: none;
+                padding: 8px 15px;
+                cursor: pointer;
+                border-radius: 4px;
+                transition: background-color 0.3s;
+            }
+
+            .event-list li button:hover{
+                background-color: #0056b3;
+            }
+
+            /* Responsive */
+            @media (max-width: 768px){
+                .tabs{
+                    flex-direction: column;
+                }
+
+                .tab{
+                    padding: 15px;
+                }
+            }
+        </style>
+    </head>
+
+    <body>
+        <!-- Navigation Bar -->
+        <nav>
+            <div class="nav-bar">
+                <i class='bx bx-menu sideBarOpen'></i>
+                <span class="logo navLogo"><a href="#">TutorXcells</a></span>
+
+                <div class="menu">
+                    <div class="logo-toggle">
+                        <span class="logo"><a href="#">TutorXcells</a></span>
+                        <i class='bx bx-x sideBarClosed'></i>
+                    </div>
+
+                    <ul class="nav-links">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Portfolio</a></li>
+                        <li><a href="#">Event</a></li>
+                        <li><a href="#">Profile</a></li>
+                    </ul>
+                </div>
+
+                <div class="darkLight-searchBox">
+                    <div class="dark-light">
+                        <i class='bx bx-moon moon'></i>
+                        <i class='bx bx-sun sun'></i>
+                    </div>
+
+                    <div class="searchBox">
+                        <div class="searchToggle">
+                            <i class='bx bx-x cancel'></i>
+                            <i class='bx bx-search search'></i>
+                        </div>
+
+                        <div class="search-field">
+                            <input type="text" placeholder="Search...">
+                            <i class='bx bx-search'></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Content: My Events Page -->
+        <div class="tabs-container">
+            <div class="tabs">
+                <div class="tab active" id="upcoming-tab">Upcoming Events</div>
+                <div class="tab" id="past-tab">Past Events</div>
+                <div class="tab" id="hosted-tab">Hosted Events</div>
+            </div>
+
+            <!-- Upcoming Events Content -->
+            <div id="upcoming-events" class="tab-content active">
+                <ul class="event-list">
+                    <li>
+                        <strong>Event Name</strong><br>
+                        Date: January 15, 2024 <br>
+                        Time: 3:00 PM <br>
+                        <button>View Details</button>
+                    </li>
+                    <li>
+                        <strong>Event Name</strong><br>
+                        Date: February 20, 2024 <br>
+                        Time: 5:00 PM <br>
+                        <button>View Details</button>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Past Events Content -->
+            <div id="past-events" class="tab-content">
+                <ul class="event-list">
+                    <li>
+                        <strong>Past Event Name</strong><br>
+                        Date: December 5, 2023 <br>
+                        Time: 1:00 PM <br>
+                        <button>View Recordings</button> | 
+                        <button>View Materials</button>
+                    </li>
+                    <li>
+                        <strong>Past Event Name</strong><br>
+                        Date: November 10, 2023 <br>
+                        Time: 2:00 PM <br>
+                        <button>View Recordings</button> | 
+                        <button>View Materials</button>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Hosted Events Content -->
+            <div id="hosted-events" class="tab-content">
+                <ul class="event-list">
+                    <li>
+                        <strong>Hosted Event Name</strong><br>
+                        Date: January 10, 2024 <br>
+                        Time: 4:00 PM <br>
+                        <button>Edit Event</button> | 
+                        <button>Cancel Event</button>
+                    </li>
+                    <li>
+                        <strong>Hosted Event Name</strong><br>
+                        Date: February 5, 2024 <br>
+                        Time: 11:00 AM <br>
+                        <button>Edit Event</button> | 
+                        <button>Cancel Event</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <script>
+            // Tab Switching Functionality
+            const tabs = document.querySelectorAll('.tab');
+            const tabContents = document.querySelectorAll('.tab-content');
+
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    tabs.forEach(t => t.classList.remove('active'));
+                    tab.classList.add('active');
+
+                    tabContents.forEach(content => content.classList.remove('active'));
+
+                    if (tab.id === 'upcoming-tab') {
+                        document.getElementById('upcoming-events').classList.add('active');
+                    } else if (tab.id === 'past-tab') {
+                        document.getElementById('past-events').classList.add('active');
+                    } else if (tab.id === 'hosted-tab') {
+                        document.getElementById('hosted-events').classList.add('active');
+                    }
+                });
+            });
+        </script>
+    </body>
+</html>

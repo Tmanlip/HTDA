@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TutorXcells Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .dashboard {
+            display: none;
+            margin-top: 20px;
+        }
+        .active {
+            display: block;
+        }
+        .buttons {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="one-box-dash">
+        <p>Welcome to TutorXcells</p>
+        <ul>
+            <li>This is a platform for students to gain notes or exercises for their courses</li>
+            <li>There are also seminars or academic events that will be advertised later by PERSAKA</li>
+        </ul>
+    </div>
+
+    <div class="buttons">
+        <button onclick="showView('student')">Student Dashboard</button>
+        <button onclick="showView('lecturer')">Lecturer Dashboard</button>
+    </div>
+
+    <div id="studentDashboard" class="dashboard active">
+        <h2>Student Dashboard</h2>
+        <p>Here you can access your notes and exercises.</p>
+        <!-- Add more student-specific content here -->
+    </div>
+
+    <div id="lecturerDashboard" class="dashboard">
+        <h2>Lecturer Dashboard</h2>
+        <p>Here you can manage your seminars and academic events.</p>
+        <!-- Add more lecturer-specific content here -->
+    </div>
+
+    <script>
+        function showView(view) {
+            const studentDashboard = document.getElementById('studentDashboard');
+            const lecturerDashboard = document.getElementById('lecturerDashboard');
+
+            if (view === 'student') {
+                studentDashboard.classList.add('active');
+                lecturerDashboard.classList.remove('active');
+            } else if (view === 'lecturer') {
+                lecturerDashboard.classList.add('active');
+                studentDashboard.classList.remove('active');
+            }
+        }
+    </script>
+</body>
+</html>
