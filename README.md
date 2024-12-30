@@ -11,6 +11,7 @@ This project includes structured file organization with directories and links fo
 
 Sprint 1:
 <table>
+<caption>User Management - Tengku</caption>
   <tr>
     <th>Login</th>
     <th><a href="Tengku Aiman/User Management/login.php">click Me</a></th>
@@ -24,8 +25,29 @@ Sprint 1:
     <th><a href="Tengku Aiman/User Management/LecturerDashboard.php">Click Me</a></th>
   </tr>
 
+  <table>
+  <caption>Administrative Dashboard - Aimi</caption>
+  <tr>
+    <th>Admin Login</th>
+    <th><a href="Sprint1_Administrative Dashboard/AdminLogin.php">click Me</a></th>
+  </tr>
+  <tr>
+    <th>Admin Dashboard</th>
+    <th><a href="Sprint1_Administrative Dashboard/AdminHome.html">Click Me</a></th>
+  </tr>
+
+  <table>
+<caption>Event Management and Scheduling - Dennish</caption>
+  <tr>
+    <th>Create Event</th>
+    <th><a href="event_form.php">click Me</a></th>
+  </tr>
+    
+  </table>
+
   Sprint 2:
 <table>
+  <caption>Article Management - Tengku</caption>
   <tr>
     <th>Submit Article</th>
     <th><a href="Tengku Module Sprint 2 Article Management/artcile.php">click Me</a></th>
@@ -45,6 +67,25 @@ Sprint 1:
     <th><a href="Tengku Module Sprint 2 Article Management/pok.php"</th>
   </tr>
 </table>
+
+<table>
+  <caption>Feedback and Reporting - Aimi</caption>
+  <tr>
+    <th>User Submit Form</th>
+    <th><a href="Sprint2_Feedback and Reporting/UserFeedbackReport.php">click Me</a></th>
+  </tr>
+  <tr>
+    <th>Admin Manage Feedback and Reporting</th>
+    <th><a href="Sprint2_Feedback and Reporting/TrackReport.php">Click Me</a></th>
+  </tr>
+</table>
+
+  <table>
+<caption>Event Page - Dennish</caption>
+  <tr>
+    <th>User View Event</th>
+    <th><a href="eventPage.html">click Me</a></th>
+  </tr>
 
 
 

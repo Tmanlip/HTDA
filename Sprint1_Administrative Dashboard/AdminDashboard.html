@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Navigation Menu Bar</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="AdminDashboard.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+
+    <style>
+        /* Fixed navbar styling */
+        .nav-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #333;
+            color: white;
+            z-index: 1000;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* Adjust main content to avoid overlap with fixed navbar */
+        main {
+            margin-top: 70px; /* Adjust based on navbar height */
+            padding: 20px;
+        }
+
+        .user-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .user-table th, .user-table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .edit-btn, .delete-btn {
+            padding: 8px 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.3s;
+        }
+
+        .edit-btn {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .edit-btn:hover {
+            background-color: #45a049;
+        
+		.button {
+            padding: 10px 15px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .delete-btn {
+            background-color: #f44336;
+            color: white;
+        }
+
+        .delete-btn:hover {
+            background-color: #e53935;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="nav-bar">
+            <i class='bx bx-menu sideBarOpen'></i>
+            <span class="logo navLogo"><a href="#" style="color: white;">TutorXcells</a></span>
+
+            <div class="menu">
+                <div class="logo-toggle">
+                    <span class="logo"><a href="#" style="color: white;">TutorXcells</a></span>
+                    <i class='bx bx-x sideBarClosed'></i>
+                </div>
+
+                <ul class="nav-links">
+                    <li><a href="AdminHome.html" style="color: white;">Home</a></li>
+                    <li><a href="UserList.php" style="color: white;">User list</a></li>
+                </ul>
+            </div>
+
+            <div class="darkLight-searchBox">
+                <div class="dark-light">
+                    <i class='bx bx-moon moon'></i>
+                    <i class='bx bx-sun sun'></i>
+                </div>
+
+                <div class="searchBox">
+                    <div class="searchToggle">
+                        <i class='bx bx-x cancel'></i>
+                        <i class='bx bx-search search'></i>
+                    </div>
+
+                    <div class="search-field">
+                        <input type="text" placeholder="Search...">
+                        <i class='bx bx-search'></i>
+                    </div>
+                </div>
+
+                <a href="Login.html" class="logout-button" style="color: white;">Logout</a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- User List Section -->
+        <div class="user-list">
+            <h2>User List</h2>
+
+            <div class="user-category">
+                <h3>Students</h3>
+                <table class="user-table">
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Course</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                    <tr>
+                        <td>John Doe</td>
+                        <td>john.doe@student.utms.edu.my</td>
+                        <td>Computer Science</td>
+                        <td>Active</td>
+                        <td class="action-buttons">
+                            <button class="edit-btn" onclick="editRow(this)">Edit</button>
+                            <button class="delete-btn" onclick="deleteRow(this)">Delete</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Jane Smith</td>
+                        <td>jane.smith@student.utms.edu.my</td>
+                        <td>Software Engineering</td>
+                        <td>Inactive</td>
+                        <td class="action-buttons">
+                            <button class="edit-btn" onclick="editRow(this)">Edit</button>
+                            <button class="delete-btn" onclick="deleteRow(this)">Delete</button>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <!-- Lecturers List -->
+            <div class="user-category">
+                <h3>Lecturers</h3>
+                <table class="user-table">
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Department</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                    <tr>
+                        <td>Dr. Alan Brown</td>
+                        <td>alan.brown@utms.edu.my</td>
+                        <td>Computer Science</td>
+                        <td>Active</td>
+                        <td class="action-buttons">
+                            <button class="edit-btn" onclick="editRow(this)">Edit</button>
+                            <button class="delete-btn" onclick="deleteRow(this)">Delete</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Dr. Emma Lee</td>
+                        <td>emma.lee@utms.edu.my</td>
+                        <td>Software Engineering</td>
+                        <td>Active</td>
+                        <td class="action-buttons">
+                            <button class="edit-btn" onclick="editRow(this)">Edit</button>
+                            <button class="delete-btn" onclick="deleteRow(this)">Delete</button>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </main>
+    <script src="AdminScript.js"></script>
+</body>
+</html>
