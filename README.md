@@ -93,7 +93,20 @@ Sprint 3:
 <table>
 <caption>Student Activity and Article Analytics - Tengku</caption>
   <tr>
-    <th>Login</th>
-    <th><a href="Tengku Aiman/User Management/login.php">click Me</a></th>
+    <th>Add Progress</th>
+    <th><a href="Tengku Module 3, Student Activity and Article Analytis/goals.html">click Me</a></th>
   </tr>
+  <tr>
+    <th>Update Progress</th>
+    <th><a href="Tengku Module 3, Student Activity and Article Analytis/update.php">click Me</a></th>
+  </tr>
+  <tr>
+    <th>Student Activity</th>
+    <th><a href="Tengku Module 3, Student Activity and Article Analytis/rewards.php">click Me</a></th>
+  </tr>
+    <tr>
+    <th>Article Engagement</th>
+    <th><a href="Tengku Module 3, Student Activity and Article Analytis/engagement.php">click Me</a></th>
+  </tr>
+  
 
