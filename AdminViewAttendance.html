@@ -95,9 +95,9 @@
             filteredParticipants.forEach(participant => {
                 const row = `
                     <tr>
-                        <td class="border border-gray-300 px-4 py-2">${participant.name}</td>
-                        <td class="border border-gray-300 px-4 py-2">${participant.email}</td>
-                        <td class="border border-gray-300 px-4 py-2">
+                        <td class="border border-gray-300 px-4 py-2 text-center">${participant.name}</td>
+                        <td class="border border-gray-300 px-4 py-2 text-center">${participant.email}</td>
+                        <td class="border border-gray-300 px-4 py-2 text-center">
                             <select onchange="updateStatus(${participant.id}, this)" class="border border-gray-300 p-2 rounded">
                                 <option value="Present" ${participant.status === "Present" ? "selected" : ""}>Present</option>
                                 <option value="Absent" ${participant.status === "Absent" ? "selected" : ""}>Absent</option>
@@ -155,3 +155,4 @@
         };
     </script>
 </body>
+</html>
