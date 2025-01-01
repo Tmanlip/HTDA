@@ -84,7 +84,15 @@ Sprint 1:
 <caption>Event Page - Dennish</caption>
   <tr>
     <th>User View Event</th>
-    <th><a href="eventPage.html">click Me</a></th>
+    <th><a href="Sprint2_SessionScheduling/eventPage.html">click Me</a></th>
+  </tr>
+</table>
+
+ <table>
+<caption>Event Page - Dennish</caption>
+  <tr>
+    <th>User View Event</th>
+    <th><a href="Sprint2_SessionScheduling/ViewRegisteredStud.html">click Me</a></th>
   </tr>
 </table>
 
