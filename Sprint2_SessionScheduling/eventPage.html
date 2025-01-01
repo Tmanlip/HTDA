@@ -31,6 +31,11 @@
                 </div>
             `;
             myUpcomingEvents.innerHTML += myEventCard;
+			
+					// Redirect user to payment page
+			setTimeout(() => {
+				window.location.href = 'PaymentForm.php';
+			}, 1000); // Add a slight delay for better UX
         }
 
         const events = [
