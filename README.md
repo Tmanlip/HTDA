@@ -37,7 +37,7 @@ Sprint 1:
   </tr>
 
   <table>
-<caption>Event Management and Scheduling - Dennish</caption>
+<caption>Event Management - Dennish</caption>
   <tr>
     <th>Create Event</th>
     <th><a href="event_form.php">click Me</a></th>
@@ -81,17 +81,15 @@ Sprint 1:
 </table>
 
   <table>
-<caption>Event Page - Dennish</caption>
+<caption>Session Scheduling - Dennish</caption>
   <tr>
     <th>User View Event</th>
     <th><a href="Sprint2_SessionScheduling/eventPage.html">click Me</a></th>
   </tr>
-</table>
 
- <table>
 <caption>Event Page - Dennish</caption>
   <tr>
-    <th>User View Event</th>
+    <th>Admin View Registered Student</th>
     <th><a href="Sprint2_SessionScheduling/ViewRegisteredStud.html">click Me</a></th>
   </tr>
 </table>
