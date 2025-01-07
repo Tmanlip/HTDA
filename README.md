@@ -99,20 +99,12 @@ Sprint 3:
 <table>
 <caption>Student Activity and Article Analytics - Tengku</caption>
   <tr>
-    <th>Add Progress</th>
-    <th><a href="Tengku Module 3, Student Activity and Article Analytis/goals.html">click Me</a></th>
+    <th>User Submit Payment</th>
+    <th><a href="Sprint3_Payment&Billing/PaymentForm.php">click Me</a></th>
   </tr>
   <tr>
-    <th>Update Progress</th>
-    <th><a href="Tengku Module 3, Student Activity and Article Analytis/update.php">click Me</a></th>
+    <th>Admin Manage Payment and Billing</th>
+    <th><a href="Sprint3_Payment&Billing/TrackPaymentBilling.php">click Me</a></th>
   </tr>
-  <tr>
-    <th>Student Activity</th>
-    <th><a href="Tengku Module 3, Student Activity and Article Analytis/rewards.php">click Me</a></th>
-  </tr>
-    <tr>
-    <th>Article Engagement</th>
-    <th><a href="Tengku Module 3, Student Activity and Article Analytis/engagement.php">click Me</a></th>
-  </tr>
-  
+</table>
 
