@@ -108,3 +108,15 @@ Sprint 3:
   </tr>
 </table>
 
+<table>
+<caption>Payment and Billing - Aimi</caption>
+  <tr>
+    <th>User Submit Payment</th>
+    <th><a href="Sprint3_Payment&Billing/PaymentForm.php">click Me</a></th>
+  </tr>
+  <tr>
+    <th>Admin Manage Payment and Billing</th>
+    <th><a href="Sprint3_Payment&Billing/TrackPaymentBilling.php">click Me</a></th>
+  </tr>
+</table>
+
