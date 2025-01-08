@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resource Sharing Module</title>
+  <link rel="stylesheet" href="resourceSharing.css">
+  
+</head>
+<body>
+  <header class="header">
+    <h1>Resource Sharing Module</h1>
+    <nav class="nav">
+      <a href="#">Home</a>
+      <a href="#upload-section">Upload Material</a>
+      <a href="#">Shared Folders</a>
+    </nav>
+  </header>
+
+  <main class="main-content">
+    <!-- Search Section -->
+    <section class="search-section">
+      <input type="text" placeholder="Search materials..." class="search-bar">
+      <button class="search-btn">Search</button>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="categories">
+      <button class="category-btn">All</button>
+      <button class="category-btn">Computational Mathematics</button>
+      <button class="category-btn">Digital Logic</button>
+      <button class="category-btn">Programming Techniques</button>
+    </section>
+
+    <!-- Resource List -->
+    <section class="resource-list">
+      <div class="resource-card" data-category="computational mathematics">
+        <h3>Computational Mathematics Basics</h3>
+        <p>Uploaded by: Staff</p>
+        <button class="download-btn">Download</button>
+      </div>
+      <div class="resource-card" data-category="digital logic">
+        <h3>Introduction to Digital Logic</h3>
+        <p>Uploaded by: Student</p>
+        <button class="download-btn">Download</button>
+      </div>
+      <div class="resource-card" data-category="programming techniques">
+        <h3>Programming Techniques: A Guide</h3>
+        <p>Uploaded by: Staff</p>
+        <button class="download-btn">Download</button>
+      </div>
+      <div class="resource-card" data-category="computational mathematics">
+        <h3>Advanced Computational Mathematics</h3>
+        <p>Uploaded by: Student</p>
+        <button class="download-btn">Download</button>
+      </div>
+    </section>
+
+    <!-- Upload Material Section -->
+    <section id="upload-section" class="upload-section">
+      <h2>Upload Material</h2>
+      <form action="uploadResource.php" method="POST" enctype="multipart/form-data">
+        <label for="course">Select Course:</label>
+        <select name="course" id="course" required>
+          <option value="Computational Mathematics">Computational Mathematics</option>
+          <option value="Digital Logic">Digital Logic</option>
+          <option value="Programming Techniques">Programming Techniques</option>
+        </select><br><br>
+
+        <label for="file">Select document to upload:</label>
+        <input type="file" name="file" id="file" required><br><br>
+
+        <button type="submit" name="submit" class="upload-btn">Upload Document</button>
+      </form>
+    </section>
+
+    <!-- Shared Folders Section -->
+
+    <div class="shared-folders">
+      <h2>Shared Resources</h2>
+      <ul id="shared-folders" >
+
+      </ul>
+
+          <!-- Shared folders items will be populated here by JavaScript -->
+    </div>
+  
+
+  </main>
+
+
+  <script src="resourceSharing.js"></script>
+  <script src="dynamicdisplay.js"></script>
+</body>
+</html>
