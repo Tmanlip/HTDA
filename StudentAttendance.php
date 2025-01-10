@@ -1,0 +1,134 @@
+<?php
+include 'db_submitattendance.php' ;
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Registered Participants</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <script>
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark');
+        }
+
+        // Function to delete a row
+        function deleteRow(button) {
+            const row = button.closest("tr"); // Find the closest table row
+            row.remove(); // Remove the row from the DOM
+        }
+    </script>
+</head>
+<body class="bg-red-900 text-black">
+    <nav class="bg-yellow-500 p-4 flex justify-between items-center sticky top-0 z-10 shadow-lg">
+        <div class="text-xl font-bold">TutorXcells</div>
+        <div class="space-x-4">
+            <a href="#home" class="hover:underline">Home</a>
+            <a href="#calendar" class="hover:underline">Calendar</a>
+            <a href="#my-events" class="hover:underline">My Events</a>
+            <a href="#" class="hover:underline">Profile</a>
+        </div>
+        <div class="flex items-center space-x-4">
+            <i class="fas fa-search"></i>
+            <button onclick="toggleDarkMode()" class="text-black font-semibold"><i class="bx bx-moon moon"></i></button>
+            <button class="bg-red-500 text-white px-4 py-2 rounded">Logout</button>
+        </div>
+    </nav>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Attendance</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        const events = [
+            { id: 1, name: "OOP Extra Class", date: "25/12/2024", time: "8:00 AM" },
+            { id: 2, name: "CM Extra Class", date: "31/12/2024", time: "8:00 AM" },
+            { id: 3, name: "Mandarin Extra Class", date: "13/6/2025", time: "10:00 AM" },
+            { id: 4, name: "Web Prog Extra Class", date: "2/4/2025", time: "3:00 PM" },
+        ];
+
+        const attendanceLog = [];
+
+        // Mark Attendance
+        function markAttendance() {
+            const studentName = document.getElementById("studentName").value.trim();
+            const studentEmail = document.getElementById("studentEmail").value.trim();
+            const selectedEventId = document.getElementById("eventSelect").value;
+
+            if (!studentName || !studentEmail || selectedEventId === "none") {
+                alert("Please fill in all the details.");
+                return;
+            }
+
+            const selectedEvent = events.find(event => event.id == selectedEventId);
+
+            // Check if student has already marked attendance
+            const isAlreadyMarked = attendanceLog.some(
+                entry => entry.email === studentEmail && entry.eventId == selectedEventId
+            );
+
+            if (isAlreadyMarked) {
+                alert("You have already marked attendance for this event.");
+                return;
+            }
+
+            // Add to attendance log
+            attendanceLog.push({ name: studentName, email: studentEmail, eventId: selectedEventId });
+
+            // Confirmation Message
+            const confirmationMessage = `
+                Attendance marked successfully!
+                Name: ${studentName}
+                Event: ${selectedEvent.name}
+                Date: ${selectedEvent.date}
+            `;
+            alert(confirmationMessage);
+
+            // Reset Form
+            document.getElementById("studentAttendanceForm").reset();
+        }
+    </script>
+</head>
+<body class="bg-blue-100 text-gray-900">
+    <div class="container mx-auto p-4">
+        <h1 class="text-3xl font-bold text-center mb-6">Mark Your Attendance</h1>
+
+        <!-- Attendance Form -->
+        <div class="bg-white shadow-md rounded-lg p-6 max-w-lg mx-auto">
+            <form id="studentAttendanceForm" onsubmit="event.preventDefault(); markAttendance();">
+                <div class="mb-4">
+                    <label for="studentName" class="block text-gray-700 font-bold mb-2">Name:</label>
+                    <input type="text" id="studentName" class="w-full border border-gray-300 p-2 rounded" placeholder="Enter your name" />
+                </div>
+
+                <div class="mb-4">
+                    <label for="studentEmail" class="block text-gray-700 font-bold mb-2">Email:</label>
+                    <input type="email" id="studentEmail" class="w-full border border-gray-300 p-2 rounded" placeholder="Enter your email" />
+                </div>
+
+                <div class="mb-4">
+                    <label for="eventSelect" class="block text-gray-700 font-bold mb-2">Select Event:</label>
+                    <select id="eventSelect" class="w-full border border-gray-300 p-2 rounded">
+                        <option value="none">-- Select an Event --</option>
+                        <option value="1">SADM Extra Class (12/12/2024)</option>
+                        <option value="1">OOP Extra Class (25/12/2024)</option>
+                        <option value="2">CM Extra Class (31/12/2024)</option>
+                        <option value="3">Mandarin Extra Class (13/6/2025)</option>
+                        <option value="4">Web Prog Extra Class (2/4/2025)</option>
+                    </select>
+                </div>
+
+                <div class="text-center">
+                    <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
+                        Mark Attendance
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

@@ -13,24 +13,36 @@
 
         function registerEvent(button, eventId) {
             button.disabled = true;
-            button.innerText = 'Successfully Registered';
+            button.innerText = 'Processing Payment...';
             button.classList.remove('bg-green-500');
-            button.classList.add('bg-gray-500');
+            button.classList.add('bg-yellow-500');
 
-            const eventElement = document.getElementById(`event-${eventId}`);
-            eventElement.classList.add('bg-gray-200');
-            eventElement.querySelector('button').disabled = true;
+            // Simulate payment process
+            setTimeout(() => {
+                button.innerText = 'Successfully Registered';
+                button.classList.remove('bg-yellow-500');
+                button.classList.add('bg-gray-500');
 
-            const event = events.find(e => e.id === eventId);
-            const myUpcomingEvents = document.getElementById('my-upcoming-events');
-            const myEventCard = `
-                <div class="bg-gray-400 p-2 rounded" id="my-event-${event.id}">
-                    <p class="text-black">${event.name}</p>
-                    <p class="text-black"><strong>Date:</strong> ${event.date}</p>
-                    <p class="text-black"><strong>Time:</strong> ${event.time}</p>
-                </div>
-            `;
-            myUpcomingEvents.innerHTML += myEventCard;
+                const eventElement = document.getElementById(`event-${eventId}`);
+                eventElement.classList.add('bg-gray-200');
+                eventElement.querySelector('button').disabled = true;
+
+                const event = events.find(e => e.id === eventId);
+                const myUpcomingEvents = document.getElementById('my-upcoming-events');
+                const myEventCard = `
+                    <div class="bg-gray-400 p-2 rounded" id="my-event-${event.id}">
+                        <p class="text-black">${event.name}</p>
+                        <p class="text-black"><strong>Date:</strong> ${event.date}</p>
+                        <p class="text-black"><strong>Time:</strong> ${event.time}</p>
+                    </div>
+                `;
+                myUpcomingEvents.innerHTML += myEventCard;
+            }, 3000); // Mock 3-second delay for payment confirmation
+
+                        // Redirect user to payment page
+			setTimeout(() => {
+				window.location.href = 'PaymentForm.html';
+			}, 1000);
         }
 
         const events = [
@@ -91,8 +103,9 @@
             <div class="bg-gray-500 p-4 rounded-lg">
                 <h2 class="text-xl font-bold text-black mb-2">Quick Links</h2>
                 <div class="space-y-2">
-                    <button class="bg-blue-500 text-white w-full py-2 rounded">Book a Tutoring Session</button>
+                    <a href="analytics.html">
                     <button class="bg-blue-500 text-white w-full py-2 rounded">View Analytics</button>
+                    </a>
                 </div>
             </div>
             <div class="bg-gray-500 p-4 rounded-lg">
