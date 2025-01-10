@@ -1,0 +1,340 @@
+/* General Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #4a090d; /* Maroon background */
+  }
+  
+  /* Header Styles */
+  .header {
+    background-color: #4a090d; /* Maroon */
+    color: #ffd700; /* Gold */
+    padding: 1rem;
+    text-align: center;
+  }
+  
+  .nav a {
+    color: #ffd700; /* Gold */
+    margin: 0 1rem;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  /* Search Section */
+  .search-section {
+    margin: 1rem;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .search-bar {
+    width: 70%;
+    padding: 0.5rem;
+    border: 1px solid #4a090d; /* Maroon */
+    border-radius: 5px;
+    background-color: #fffbe6; /* Light gold */
+    color: #4a090d; /* Maroon text */
+  }
+  
+  .search-btn {
+    background-color: #4a090d; /* Maroon */
+    color: #fff; /* White text */
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+  }
+  
+  .search-btn:hover {
+    background-color: #7b0b0e; /* Darker maroon */
+  }
+  
+  /* Categories Section */
+  .categories {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin: 1rem 0;
+  }
+  
+  .category-btn {
+    background-color: #4a090d; /* Maroon */
+    color: #fff; /* White text */
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+  }
+  
+  .category-btn:hover {
+    background-color: #7b0b0e; /* Darker maroon */
+  }
+  
+  /* Resource List */
+  .resource-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    padding: 1rem;
+  }
+  
+  .resource-card {
+    background-color: #ef970b; /* Orange */
+    padding: 1rem;
+    border: 1px solid #bfa33f; /* Gold border */
+    border-radius: 5px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease, background-color 0.3s ease;
+  }
+  
+  .resource-card:hover {
+    background-color: #f7ae40; /* Lighter orange on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  .download-btn {
+    background-color: #4a090d; /* Maroon */
+    color: #fff; /* White text */
+    border: none;
+    padding: 0.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+  }
+  
+  .download-btn:hover {
+    background-color: #7b0b0e; /* Darker maroon */
+  }
+  
+  /* Shared Folders Section */
+  .shared-folders {
+    margin: 1rem;
+    padding: 1rem;
+    border: 2px solid #fff; /* White border */
+    background-color: #ffffff; /* White background */
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  .folder {
+    background-color: #ef970b; /* Orange */
+    padding: 1rem;
+    border: 1px solid #bfa33f; /* Gold border */
+    border-radius: 5px;
+    margin: 1rem 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .open-folder-btn {
+    background-color: #4a090d; /* Maroon */
+    color: #fff; /* White text */
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+  }
+  
+  .open-folder-btn:hover {
+    background-color: #7b0b0e; /* Darker maroon */
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .search-bar {
+      width: 100%;
+    }
+  
+    .categories {
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+  }
+
+  /* General styles for the page */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+  }
+  
+  header {
+    background-color: #2c3e50;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  nav a {
+    color: #fff;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  nav a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Main content section */
+  .main-content {
+    padding: 30px;
+  }
+  
+  /* General styles for the page */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+  }
+  
+  header {
+    background-color: #800000; /* Maroon color */
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  nav a {
+    color: #fff;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  nav a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Main content section */
+  .main-content {
+    padding: 30px;
+  }
+  
+  /* Upload Section Styling */
+  .upload-section {
+    background-color: #800000; /* Maroon color */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    color: #fff;
+  }
+  
+  .upload-section h2 {
+    font-size: 24px;
+    color: #fff;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+  
+  .upload-section form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .upload-section label {
+    font-size: 16px;
+    color: #fff;
+  }
+  
+  .upload-section select,
+  .upload-section input[type="file"] {
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 100%;
+    background-color: #fff;
+    color: #333;
+  }
+  
+  .upload-section select:focus,
+  .upload-section input[type="file"]:focus {
+    border-color: #f4d03f; /* Gold color */
+    outline: none;
+  }
+  
+  .upload-section .upload-btn {
+    background-color: #f4d03f; /* Gold color */
+    color: #800000; /* Maroon text */
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    font-weight: bold;
+  }
+  
+  .upload-section .upload-btn:hover {
+    background-color: #ffd700; /* Brighter gold */
+  }
+  
+  .upload-section .upload-btn:disabled {
+    background-color: #c4c4c4; /* Gray for disabled */
+    cursor: not-allowed;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .upload-section form {
+      padding: 15px;
+    }
+  
+    .upload-section input[type="file"],
+    .upload-section select {
+      font-size: 14px;
+    }
+  
+    .upload-section .upload-btn {
+      font-size: 14px;
+    }
+  }
+  
+  .action-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  
+  .download-btn, .delete-btn {
+    padding: 8px 12px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 5px;
+  }
+  
+  .download-btn {
+    background-color: #4CAF50; /* Green for download */
+    color: white;
+  }
+  
+  .delete-btn {
+    background-color: #f44336; /* Red for delete */
+    color: white;
+  }
+  
+  .download-btn:hover {
+    background-color: #45a049;
+  }
+  
+  .delete-btn:hover {
+    background-color: #d32f2f;
+  }
+  

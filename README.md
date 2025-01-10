@@ -37,7 +37,7 @@ Sprint 1:
   </tr>
 
   <table>
-<caption>Event Management and Scheduling - Dennish</caption>
+<caption>Event Management - Dennish</caption>
   <tr>
     <th>Create Event</th>
     <th><a href="event_form.php">click Me</a></th>
@@ -81,10 +81,16 @@ Sprint 1:
 </table>
 
   <table>
-<caption>Event Page - Dennish</caption>
+<caption>Session Scheduling - Dennish</caption>
   <tr>
     <th>User View Event</th>
-    <th><a href="eventPage.html">click Me</a></th>
+    <th><a href="Sprint2_SessionScheduling/eventPage.html">click Me</a></th>
+  </tr>
+
+<caption>Event Page - Dennish</caption>
+  <tr>
+    <th>Admin View Registered Student</th>
+    <th><a href="Sprint2_SessionScheduling/ViewRegisteredStud.html">click Me</a></th>
   </tr>
 </table>
 
@@ -93,20 +99,24 @@ Sprint 3:
 <table>
 <caption>Student Activity and Article Analytics - Tengku</caption>
   <tr>
-    <th>Add Progress</th>
-    <th><a href="Tengku Module 3, Student Activity and Article Analytis/goals.html">click Me</a></th>
+    <th>User Submit Payment</th>
+    <th><a href="Sprint3_Payment&Billing/PaymentForm.php">click Me</a></th>
   </tr>
   <tr>
-    <th>Update Progress</th>
-    <th><a href="Tengku Module 3, Student Activity and Article Analytis/update.php">click Me</a></th>
+    <th>Admin Manage Payment and Billing</th>
+    <th><a href="Sprint3_Payment&Billing/TrackPaymentBilling.php">click Me</a></th>
+  </tr>
+</table>
+
+<table>
+<caption>Payment and Billing - Aimi</caption>
+  <tr>
+    <th>User Submit Payment</th>
+    <th><a href="Sprint3_Payment&Billing/PaymentForm.php">click Me</a></th>
   </tr>
   <tr>
-    <th>Student Activity</th>
-    <th><a href="Tengku Module 3, Student Activity and Article Analytis/rewards.php">click Me</a></th>
+    <th>Admin Manage Payment and Billing</th>
+    <th><a href="Sprint3_Payment&Billing/TrackPaymentBilling.php">click Me</a></th>
   </tr>
-    <tr>
-    <th>Article Engagement</th>
-    <th><a href="Tengku Module 3, Student Activity and Article Analytis/engagement.php">click Me</a></th>
-  </tr>
-  
+</table>
 

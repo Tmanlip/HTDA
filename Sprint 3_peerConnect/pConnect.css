@@ -1,0 +1,193 @@
+/* General Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #4a090d; /* Maroon background */
+    color: #333;
+    padding: 20px;
+    margin: 0;
+    position: relative; /* Ensure overlay is properly positioned */
+}
+
+/* Transparent overlay for text readability */
+.overlay {
+    position: absolute; /* Position overlay absolutely */
+    top: 0; left: 0; width: 100%; height: 100%; /* Cover full viewport */
+    background-color: rgba(74, 9, 13, 0.6); /* Semi-transparent overlay */
+    z-index: 1; /* Above the background image */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+}
+
+
+/* Available Study Sessions Section */
+.available-sessions-section {
+    background-color: #f0ad43; /* Light gold background for contrast */
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: relative; /* Ensure form overlay doesn't affect other elements */
+    z-index: 2; /* Ensure form is above the overlay */
+}
+
+h1, h2 {
+    text-align: center;
+    color: #f0ad43; /* Gold color for the text */
+    margin-bottom: 30px;
+    position: relative;
+    font-weight: bold; /* Bold font weight for prominence */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    background-image: linear-gradient(135deg, #7b0b0e, #f0ad43); /* Lighter maroon gradient background */
+    padding: 10px; /* Added padding for more breathing space */
+    border-radius: 8px; /* Rounded corners for styling */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15); /* Light shadow for 3D effect */
+}
+
+.create-session-section, .available-sessions-section {
+    background-color: #7b0b0e; /* Lighter maroon background for the section */
+    border-radius: 8px;
+    padding: 15px 10px; /* Adjust padding to make the section less wide */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: relative; /* Ensure form overlay doesn't affect other elements */
+    z-index: 2; /* Ensure form is above the overlay */
+}
+
+.available-sessions-section h2 {
+    color: #f0ad43; /* Gold color for Available Study Sessions heading */
+}
+
+
+/* Form Section */
+form {
+    width: 90%; /* Adjust the width of the form */
+    max-width: 600px; /* Set a max-width to prevent it from getting too narrow */
+    margin: 0 auto; /* Center the form horizontally */
+    background-color: #f0ad43; /* Light gold background for form */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: relative; /* Ensure form overlay doesn't affect other elements */
+    z-index: 3; /* Ensure form is above the overlay */
+}
+
+/* Overlay Specific Styling */
+.overlay-text {
+    position: absolute;
+    top: 50%; /* Center the text vertically */
+    left: 50%; /* Center the text horizontally */
+    transform: translate(-50%, -50%);
+    width: 100%;
+    text-align: center;
+    z-index: 4; /* Ensure overlay text is above the form */
+}
+
+/* Input, Select, Button Styles */
+input, select, button {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-top: 8px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+button {
+    background-color: #4a090d; /* Maroon */
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+button:hover {
+    background-color: #7b0b0e; /* Darker maroon */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Group List and Sessions List */
+.group-list, #sessions-list {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.group-list li, #sessions-list li {
+    background-color: #fff3e0; /* Gold background */
+    padding: 16px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 16px;
+}
+
+.group-list li:hover, #sessions-list li:hover {
+    background-color: #f7e8a1; /* Slight yellow tint on hover */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Results Section */
+.results-section {
+    margin-top: 20px;
+    background: #f0ad43; /* Gold background */
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.results-section h2 {
+    color: #4a090d; /* Maroon */
+}
+
+/* Available Sessions Section */
+/* Available Sessions Section */
+/* Available Sessions Section */
+.available-sessions-section {
+    display: flex;
+    flex-wrap: wrap; /* Ensure cards wrap */
+    justify-content: center; /* Center the cards horizontally */
+    gap: 20px; /* Space between cards */
+}
+
+.session-card {
+    background-color: #fff3e0; /* Light gold background */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: calc(50% - 20px); /* Take half the container width minus the gap */
+}
+
+.session-card h3 {
+    margin-top: 0;
+    color: #4a090d; /* Maroon header */
+}
+
+.join-button {
+    background-color: #4a090d; /* Maroon */
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.join-button:hover {
+    background-color: #7b0b0e; /* Darker maroon */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.session-card {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 10px;
+    background-color: #f9f9f9;
+}
+
+.session-card h3 {
+    margin: 0 0 10px;
+}
+
+
