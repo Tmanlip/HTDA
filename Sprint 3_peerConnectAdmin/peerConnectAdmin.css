@@ -1,0 +1,78 @@
+/* peerConnectAdmin.css */
+
+/* General Styles */
+body {
+    font-family: 'Roboto', sans-serif; /* Font style */
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4; /* Light background for contrast */
+}
+
+/* Header Styles */
+.header {
+    background-color: #4a090d; /* Dark maroon */
+    color: #ffd700; /* Gold */
+    padding: 20px;
+    text-align: center;
+    border-bottom: 2px solid #ffd700; /* Gold border at the bottom */
+}
+
+/* Main Content Styles */
+.main-content {
+    padding: 30px;
+    color: #333; /* Dark text for readability */
+    background-color: #fff; /* White background for content */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse; /* Collapse borders */
+    margin-bottom: 20px;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #ddd; /* Light gray border */
+}
+
+th {
+    background-color: #4a090d; /* Dark maroon header */
+    color: #ffd700; /* Gold text */
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2; /* Light gray for even rows */
+}
+
+tr:hover {
+    background-color: #e0e0e0; /* Darker gray on hover */
+}
+
+/* Button Styles */
+.delete-btn {
+    background-color: #f44336; /* Red for delete */
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.delete-btn:hover {
+    background-color: #d32f2f; /* Darker red on hover */
+}
+
+/* Section Styles */
+section {
+    margin-bottom: 30px; /* Space between sections */
+}
+
+h2 {
+    color: #4a090d; /* Dark maroon for section headings */
+}
+

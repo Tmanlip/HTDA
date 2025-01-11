@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peer Connect Admin Dashboard</title>
+    <link rel="stylesheet" href="peerConnectAdmin.css"> <!-- Link to the new CSS file -->
+</head>
+<body>
+    <header class="header">
+        <h1>Peer Connect Admin Dashboard</h1>
+    </header>
+
+    <main class="main-content">
+        <section>
+            <h2>Current Sessions</h2>
+            <table id="session-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Session Name</th>
+                        <th>Experience Level</th>
+                        <th>Time</th>
+                        <th>Location</th>
+                        <th>Max Participants</th>
+                        <th>Members</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="session-body">
+                    <!-- Session data will be populated here -->
+                </tbody>
+            </table>
+        </section>
+
+        <section>
+            <h2>Deleted Sessions</h2>
+            <table id="deleted-sessions-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Session Name</th>
+                        <th>Experience Level</th>
+                        <th>Time</th>
+                        <th>Location</th>
+                        <th>Max Participants</th>
+                        <th>Members</th>
+                    </tr>
+                </thead>
+                <tbody id="deleted-sessions-body">
+                    <!-- Deleted session data will be populated here -->
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <script src="peerConnectAdmin.js"></script>
+</body>
+</html>
