@@ -42,6 +42,21 @@ Sprint 1:
     <th>Create Event</th>
     <th><a href="Sprint 1/eventManagement.php">click Me</a></th>
   </tr>
+
+  <table>
+<caption>Knowledge Forum - Hazim</caption>
+  <tr>
+    <th>Post Question</th>
+    <th><a href="Knowledge Forum/forum.php">click Me</a></th>
+  </tr>
+  <tr>
+    <th>Reply Question</th>
+    <th><a href="Knowledge Forum/reply.php">Click Me</a></th>
+  </tr>
+  <tr>
+    <th>Admin Delete Question</th>
+    <th><a href="Knowledge Forum/reply.php">Click Me</a></th>
+  </tr>
     
   </table>
 
