@@ -14,7 +14,7 @@ Sprint 1:
 <caption>User Management - Tengku</caption>
   <tr>
     <th>Login</th>
-    <th><a href="Tengku Aiman/User Management/login.php">click Me</a></th>
+    <th><a href="User Dashboard/login.php">click Me</a></th>
   </tr>
   <tr>
     <th>Student Dashboard</th>
@@ -50,21 +50,21 @@ Sprint 1:
   <caption>Article Management - Tengku</caption>
   <tr>
     <th>Submit Article</th>
-    <th><a href="Tengku Module Sprint 2 Article Management/artcile.php">click Me</a></th>
+    <th><a href="Article/artcile.php">click Me</a></th>
   </tr>
   <tr>
     <th>View Pending Article</th>
-    <th><a href="Tengku Module Sprint 2 Article Management/adminartcile.php">Click Me</a></th>
+    <th><a href="Article/adminartcile.php">Click Me</a></th>
   </tr>
   <tr>
     <th>Approve Article</th>
-    <th><a href="Tengku Module Sprint 2 Article Management/show-article.php">Click Me</a></th>
-    <th><a href="Tengku Module Sprint 2 Article Management/approve.php"</th>
+    <th><a href="Article/show-article.php">Click Me</a></th>
+    <th><a href="Article/approve.php"</th>
   </tr>
     <tr>
     <th>View Approved Articles</th>
-    <th><a href="Tengku Module Sprint 2 Article Management/disparticle.php">Click Me</a></th>
-    <th><a href="Tengku Module Sprint 2 Article Management/pok.php"</th>
+    <th><a href="Article/disparticle.php">Click Me</a></th>
+    <th><a href="Article/pok.php"</th>
   </tr>
 </table>
 
@@ -99,12 +99,16 @@ Sprint 3:
 <table>
 <caption>Student Activity and Article Analytics - Tengku</caption>
   <tr>
-    <th>User Submit Payment</th>
-    <th><a href="Sprint3_Payment&Billing/PaymentForm.php">click Me</a></th>
+    <th>Student Activity</th>
+    <th><a href="Website Analytics/rewards.php">click Me</a></th>
   </tr>
   <tr>
-    <th>Admin Manage Payment and Billing</th>
+    <th>Article Engagement</th>
     <th><a href="Sprint3_Payment&Billing/TrackPaymentBilling.php">click Me</a></th>
+  </tr>
+  <tr>
+    <th>Academic Goals</th>
+    <th><a href="Website Analytics/update.php">click Me</a></th>
   </tr>
 </table>
 
