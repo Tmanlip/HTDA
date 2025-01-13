@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forum</title>
+
+    <link rel="stylesheet" href="forum.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+</head>
+<body>
+    <nav>
+        <nav>
+            <div class="nav-bar">
+                <i class='bx bx-menu sideBarOpen'></i>
+                <span class="logo navLogo"><a href="http://localhost/HiTDA/Administrative%20Dashboard/AdminHome.php">TutorXcells</a></span>
+    
+                <div class="menu">
+                    <div class="logo-toggle">
+                        <span class="logo"><a href="http://localhost/HiTDA/Administrative%20Dashboard/AdminHome.php">TutorXcells</a></span>
+                        <i class='bx bx-x sideBarClosed'></i>
+                    </div>
+    
+                    <ul class="nav-links">
+                        <li><a href="http://localhost/HiTDA/Feedback%20and%20Reporting/track-report.php">Feedback & Reporting</a></li>
+                        <li><a href="http://localhost/HiTDA/Module%203/rewards.php">Student Activity</a></li>
+                        <li><a href="http://localhost/HiTDA/Module%203/engagement.php">Article Engagement</a></li>
+                    </ul>
+                </div>
+    
+                <div class="darkLight-searchBox">
+                    <div class="dark-light">
+                        <i class='bx bx-moon moon'></i>
+                        <i class='bx bx-sun sun' ></i>
+                    </div>
+    
+                    <div class="searchBox">
+                        <div class="searchToggle">
+                            <i class='bx bx-x cancel'></i>
+                            <i class='bx bx-search search'></i>
+                        </div>
+    
+                        <div class="search-field">
+                            <input id="search-input" type="text" placeholder="Search...">
+                            <i class='bx bx-search' onclick="searchQuestions()"></i>
+                        </div>                    
+                        
+                    </div>
+                </div>
+
+                <a href="AdminLogin.php" class="logout-button"">Logout</a>
+                
+            </div>
+        </nav>
+    </nav>
+
+    <main>
+        <div class="forum-container">
+            <h2>Forum</h2>
+            
+            <!-- Questions List -->
+            <div class="questions-list">
+                <ul id="questions">
+                    <!-- Question items will be populated here by JavaScript -->
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <script>
+
+        // Function to fetch questions from the server
+        function fetchQuestions() {
+            fetch('fetch_questions.php')
+                .then(response => response.json()) // Parse the response as JSON
+                .then(data => {
+                    console.log("Fetched questions:", data); // Log the fetched questions
+                    displayQuestions(data); // Call displayQuestions with the fetched questions
+                })
+                .catch(error => console.error('Error fetching questions:', error));
+        }
+
+        // Function to display the questions
+        function displayQuestions(questions) {
+            const questionsList = document.getElementById("questions");
+            questionsList.innerHTML = ""; // Clear existing content
+
+            questions.forEach((question) => {
+                const listItem = document.createElement("li");
+                listItem.className = "question-item";
+                listItem.setAttribute("data-question-id", question.id); // Add the data-question-id attribute
+
+                listItem.innerHTML = `
+                    <h3>${question.title}</h3>
+                    <p>${question.description}</p>
+                    <p><strong>Tags:</strong> ${question.tags}</p>
+                    <button onclick="deleteQuestion(${question.id})">Delete</button>
+                `;
+
+                questionsList.appendChild(listItem);
+            });
+        }
+
+        // Function to simulate deleting a question
+function deleteQuestion(questionId) {
+    // Make a GET request to delete.php to delete the question from the database
+    fetch(`delete.php?question_id=${questionId}`, {
+        method: 'GET' // Using GET to pass the question_id as a query parameter
+    })
+    .then(response => response.json()) // Parse the JSON response from delete.php
+    .then(data => {
+        // Check if the deletion was successful
+        if (data.status === 'success') {
+            console.log(data.message); // Log the success message
+            // Now remove the question from the DOM
+            const questionListItem = document.querySelector(`#questions li[data-question-id="${questionId}"]`);
+            if (questionListItem) {
+                questionListItem.remove(); // Remove the question from the DOM
+            }
+        } else {
+            console.log(data.message); // Log the error message
+        }
+    })
+    .catch(error => console.error('Error deleting question:', error));
+}
+
+
+        // Load questions when the page is ready
+        document.addEventListener("DOMContentLoaded", fetchQuestions);
+    </script>
+</body>
+</html>
