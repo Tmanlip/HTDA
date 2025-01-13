@@ -40,7 +40,7 @@ Sprint 1:
 <caption>Event Management - Dennish</caption>
   <tr>
     <th>Create Event</th>
-    <th><a href="event_form.php">click Me</a></th>
+    <th><a href="Sprint 1/eventManagement.php">click Me</a></th>
   </tr>
     
   </table>
@@ -84,13 +84,13 @@ Sprint 1:
 <caption>Session Scheduling - Dennish</caption>
   <tr>
     <th>User View Event</th>
-    <th><a href="Sprint2_SessionScheduling/eventPage.html">click Me</a></th>
+    <th><a href="Sprint 2/eventPage.php">click Me</a></th>
   </tr>
 
 <caption>Event Page - Dennish</caption>
   <tr>
     <th>Admin View Registered Student</th>
-    <th><a href="Sprint2_SessionScheduling/ViewRegisteredStud.html">click Me</a></th>
+    <th><a href="Sprint 2/ViewRegisteredStud.php">click Me</a></th>
   </tr>
 </table>
 
@@ -127,11 +127,11 @@ Sprint 3:
 <caption>Attendance Tracking - Dennish</caption>
   <tr>
     <th>Student Attendance</th>
-    <th><a href="Sprint3_AttendanceTracking/StudentAttendance.html">click Me</a></th>
+    <th><a href="Sprint 3/submit_attendance.php">click Me</a></th>
   </tr>
   <tr>
     <th>Admin View Attendance</th>
-    <th><a href="Sprint3_AttendanceTracking/AdminViewAttendance.html">click Me</a></th>
+    <th><a href="Sprint 3/AdminViewAttendance.php">click Me</a></th>
   </tr>
 </table>
 
