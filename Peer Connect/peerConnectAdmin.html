@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peer Connect Admin Dashboard</title>
+    <link rel="stylesheet" href="peerConnectAdmin.css"> <!-- Link to Peer Connect Admin CSS -->
+    <link rel="stylesheet" href="../navbar.css"> <!-- Correct path to NavBar CSS -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+</head>
+
+<body>
+    <nav>
+        <div class="nav-bar">
+            <i class='bx bx-menu sideBarOpen'></i>
+            <span class="logo navLogo"><a href="http://localhost/HiTDA/Administrative%20Dashboard/AdminHome.php">TutorXcells</a></span>
+
+            <div class="menu">
+                <div class="logo-toggle">
+                    <span class="logo"><a href="http://localhost/HiTDA/Administrative%20Dashboard/AdminHome.php">TutorXcells</a></span>
+                    <i class='bx bx-x sideBarClosed'></i>
+                </div>
+
+                <ul class="nav-links">
+                    <li><a href="http://localhost/HiTDA/Feedback%20and%20Reporting/track-report.php">Feedback & Reporting</a></li>
+                    <li><a href="http://localhost/HiTDA/Module%203/rewards.php">Student Activity</a></li>
+                    <li><a href="http://localhost/HiTDA/Module%203/engagement.php">Article Engagement</a></li>
+                </ul>
+            </div>
+
+            <div class="darkLight-searchBox">
+                <div class="dark-light">
+                    <i class='bx bx-moon moon'></i>
+                    <i class='bx bx-sun sun'></i>
+                </div>
+
+                <div class="searchBox">
+                    <div class="searchToggle">
+                        <i class='bx bx-x cancel'></i>
+                        <i class='bx bx-search search'></i>
+                    </div>
+
+                    <div class="search-field">
+                        <input id="search-input" type="text" placeholder="Search...">
+                        <i class='bx bx-search' onclick="searchQuestions()"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <section>
+            <h2>Current Sessions</h2>
+            <table id="session-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Session Name</th>
+                        <th>Experience Level</th>
+                        <th>Time</th>
+                        <th>Location</th>
+                        <th>Max Participants</th>
+                        <th>Members</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="session-body">
+                    <!-- Session data will be populated here -->
+                </tbody>
+            </table>
+        </section>
+
+        <section>
+            <h2>Deleted Sessions</h2>
+            <table id="deleted-sessions-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Session Name</th>
+                        <th>Experience Level</th>
+                        <th>Time</th>
+                        <th>Location</th>
+                        <th>Max Participants</th>
+                        <th>Members</th>
+                    </tr>
+                </thead>
+                <tbody id="deleted-sessions-body">
+                    <!-- Deleted session data will be populated here -->
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <script src="../script.js"></script> <!-- Correct path to NavBar JavaScript -->
+    <script src="peerConnectAdmin.js"></script>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="adminDashboard.css"> <!-- Link to Admin Dashboard CSS -->
+    <link rel="stylesheet" href="../navbar.css"> <!-- Correct path to NavBar CSS -->
+    <!-- Boxicons CSS -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+</head>
+<body>
+    <nav>
+        <div class="nav-bar">
+            <i class='bx bx-menu sideBarOpen'></i>
+            <span class="logo navLogo"><a href="http://localhost/HiTDA/Administrative%20Dashboard/AdminHome.php">TutorXcells</a></span>
+
+            <div class="menu">
+                <div class="logo-toggle">
+                    <span class="logo"><a href="#">TutorXcells</a></span>
+                    <i class='bx bx-x sideBarClosed'></i>
+                </div>
+
+                <ul class="nav-links">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Portfolio</a></li>
+                    <li><a href="#">Event</a></li>
+                    <li><a href="#">Profile</a></li>
+                </ul>
+            </div>
+
+            <div class="darkLight-searchBox">
+                <div class="dark-light">
+                    <i class='bx bx-moon moon'></i>
+                    <i class='bx bx-sun sun'></i>
+                </div>
+
+                <div class="searchBox">
+                    <div class="searchToggle">
+                        <i class='bx bx-x cancel'></i>
+                        <i class='bx bx-search search'></i>
+                    </div>
+
+                    <div class="search-field">
+                        <input id="search-input" type="text" placeholder="Search...">
+                        <i class='bx bx-search' onclick="searchQuestions()"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <header class="header">
+            <h1></h1>
+        </header>
+
+        <div class="main-content">
+            <section>
+                <h2>Current Resources</h2>
+                <table id="resource-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Course Name</th>
+                            <th>Document Name</th>
+                            <th>File Path</th>
+                            <th>Upload Date</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="resource-body">
+                        <!-- Resource data will be populated here -->
+                    </tbody>
+                </table>
+            </section>
+
+            <section>
+                <h2>Deleted Resources</h2>
+                <table id="deleted-resources-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Course Name</th>
+                            <th>Document Name</th>
+                            <th>File Path</th>
+                            <th>Upload Date</th>
+                        </tr>
+                    </thead>
+                    <tbody id="deleted-resources-body">
+                        <!-- Deleted resource data will be populated here -->
+                    </tbody>
+                </table>
+            </section>
+        </div>
+    </main>
+
+    <script src="../script.js"></script> <!-- Correct path to NavBar JavaScript -->
+    <script src="adminDashboard.js"></script>
+</body>
+</html>
