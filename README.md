@@ -55,7 +55,7 @@ Sprint 1:
   </tr>
   <tr>
     <th>Admin Delete Question</th>
-    <th><a href="Knowledge Forum/reply.php">Click Me</a></th>
+    <th><a href="Knowledge Forum/delete.php">Click Me</a></th>
   </tr>
     
   </table>
@@ -109,6 +109,22 @@ Sprint 1:
   </tr>
 </table>
 
+<table>
+  <caption>Resource Sharing - Hazim</caption>
+  <tr>
+    <th>Submit Resource</th>
+    <th><a href="Resource Sharing/resourceSharing.php">click Me</a></th>
+  </tr>
+  <tr>
+    <th>Download Resource</th>
+    <th><a href="Resource Sharing/download.php">Click Me</a></th>
+  </tr>
+  <tr>
+    <th>Admin Delete Resource</th>
+    <th><a href="Resource Sharing/deleteResource.php">Click Me</a></th>
+  </tr>
+</table>
+
 Sprint 3: 
 
 <table>
@@ -147,6 +163,22 @@ Sprint 3:
   <tr>
     <th>Admin View Attendance</th>
     <th><a href="Sprint 3/AdminViewAttendance.php">click Me</a></th>
+  </tr>
+</table>
+
+<table>
+  <caption>Peer Connect - Hazim</caption>
+  <tr>
+    <th>Create Study Session</th>
+    <th><a href="Peer Connect/pConnect.php">click Me</a></th>
+  </tr>
+  <tr>
+    <th>Join Study Session</th>
+    <th><a href="Peer Connect/join-session.php">Click Me</a></th>
+  </tr>
+  <tr>
+    <th>Admin Delete Session</th>
+    <th><a href="Peer Connect/deleteSession.php">Click Me</a></th>
   </tr>
 </table>
 
