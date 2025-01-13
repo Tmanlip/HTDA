@@ -118,5 +118,16 @@ Sprint 3:
     <th>Admin Manage Payment and Billing</th>
     <th><a href="Sprint3_Payment&Billing/TrackPaymentBilling.php">click Me</a></th>
   </tr>
+
+  <table>
+<caption>Attendance Tracking - Dennish</caption>
+  <tr>
+    <th>Student Attendance</th>
+    <th><a href="Sprint3_AttendanceTracking/StudentAttendance.html">click Me</a></th>
+  </tr>
+  <tr>
+    <th>Admin View Attendance</th>
+    <th><a href="Sprint3_AttendanceTracking/AdminViewAttendance.html">click Me</a></th>
+  </tr>
 </table>
 
