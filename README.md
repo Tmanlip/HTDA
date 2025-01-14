@@ -14,7 +14,7 @@ Sprint 1:
 <caption>User Management - Tengku</caption>
   <tr>
     <th>Register Student</th>
-    <th><a href="Tengku Aiman/User Management/LecturerDashboard.php">Click Me</a></th>
+    <th><a href="User Dashboard/studregist.php">Click Me</a></th>
   </tr>
   <tr>
     <th>Login</th>
@@ -22,7 +22,7 @@ Sprint 1:
   </tr>
   <tr>
     <th>Forgot Password</th>
-    <th><a href="Tengku Aiman/User Management/LecturerDashboard.php">Click Me</a></th>
+    <th><a href="User Dashboard/emailpass.php">Click Me</a></th>
   </tr>
   <tr>
     <th>Student Dashboard</th>
