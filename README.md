@@ -13,8 +13,16 @@ Sprint 1:
 <table>
 <caption>User Management - Tengku</caption>
   <tr>
+    <th>Register Student</th>
+    <th><a href="Tengku Aiman/User Management/LecturerDashboard.php">Click Me</a></th>
+  </tr>
+  <tr>
     <th>Login</th>
     <th><a href="User Dashboard/login.php">click Me</a></th>
+  </tr>
+  <tr>
+    <th>Forgot Password</th>
+    <th><a href="Tengku Aiman/User Management/LecturerDashboard.php">Click Me</a></th>
   </tr>
   <tr>
     <th>Student Dashboard</th>
